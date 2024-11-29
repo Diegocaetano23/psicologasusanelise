@@ -1,0 +1,2049 @@
+body, html {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    width: 100%; /* Garante que o body e html ocupem 100% */
+    box-sizing: border-box; /* Inclui paddings e bordas no cálculo */
+    padding-top: 60px;
+}
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@ AV - TOPNAV - TOPNAV - TOPNAV - TOPNAV - TOPANV @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+.topnav {
+  position: sticky; /* Mantém o topnav fixo no topo ao rolar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 0; /* Apenas padding vertical */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 0; /* Remove qualquer margem */
+  width: 100%; /* Garante que ocupe toda a largura */
+  position: fixed; /* Fixa no topo da página */
+  top: 0; /* Alinha ao topo */
+  left: 0; /* Inicia da borda esquerda */
+  z-index: 20; /* Certifique-se de que o topnav está acima do botão */
+  height: auto; /* Ajusta a altura automaticamente, baseado no padding */
+}
+
+
+/*@@@@@@@ topnav ajuste imagem em telas menore 601px @@@@@@*/
+
+@media  (min-width: 600px) {
+
+  .logo img {
+    width: 150px;
+    height: auto;
+    margin-left: 200px;
+  }
+}
+
+/*###### topnav ajsut img end - img topnav ajuste end #################*/
+
+.logo img {
+  width: 150px;
+  height: auto;
+  margin-left: 10px;
+ 
+}
+  
+  .links-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .links-top p {
+    margin: 0 20px;
+    cursor: pointer;
+    color: #3d3838;
+    transition: color 0.3s ease;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+  
+  .links-top p:hover {
+    color: #ccc;
+  }
+
+
+  .side-btn {
+    display: none; /* Oculta por padrão */
+}
+
+@media (min-width: 768px) {
+    .side-btn {
+        display: block; /* Exibe em telas maiores ou iguais a 601px */
+    }
+}
+
+
+  .agendar {
+    height: 50px;
+    width: 185px;
+    background-color: #000000;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    display: flex; /* Ativa Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente (ajustável) */
+    gap: 10px; /* Espaçamento entre a imagem e o texto */
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-right: 20px;
+}
+
+.agendar img {
+    height: 25px; /* Ajuste conforme necessário */
+    margin: 0; /* Remove margens extras */
+}
+
+
+
+
+  .ahendar:hover{
+    background-color:#000000; /* cor rosa mais escura ao passar o mouse */
+    }
+
+    .agendar{
+      transition: transform 0.3s ease;
+    }
+
+    /* Quando o cursor passa sobre o botão */
+.agendar:hover{
+transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+}
+
+/* Quando o botão é clicado */
+.agendar:active{
+transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
+}
+
+
+
+/* ############################################################################################
+ TOPNAV END - TOPNAV END - TOPNAV END - TOPNAV END - TOPNAV END #############################*/
+
+
+
+  /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  MENU & DROPDOWN - MENU & DROPDOWN - MENU & DROPDOWN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+  /* Esconder menu padrão em telas maiores */
+.menu {
+    display: none;
+}
+
+/* Ajuste do botão do menu */
+.menu img {
+    width: 30px; /* Tamanho reduzido do botão */
+    height: auto;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.dropdown-content {
+    display: none; /* Oculta inicialmente */
+    position: fixed; /* Fixa o dropdown em relação à janela */
+    margin-top: 100px;
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o centro visual */
+    background-color: #fafafa; /* Fundo branco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000; /* Certifica-se de que está acima de outros elementos */
+    text-align: center; /* Centraliza os textos */
+    width: 80%; /* Ajustável conforme necessário */
+    max-width: 300px; /* Largura máxima para telas menores */
+}
+
+
+/* Estilo dos itens do dropdown */
+.dropdown-content p {
+    margin: 10px 0;
+    cursor: pointer;
+    color: #000;
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content p:hover {
+    color: #ccc;
+}
+
+/* Exibir menu dropdown em telas menores */
+@media screen and (max-width: 600px) {
+    .links-top, .btn-top {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        position: relative;
+    }
+    
+}
+
+  /* ##########################################################################################
+  MENU & DROPDOWN END - MENU & DROPDOWN END - MENU & DROPDOWN END ########################## */
+
+
+
+
+
+
+
+
+
+   /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  DIV 1 - DIV 1 - DIV 1 - DIV 1 - DIV 1 - DIV 1 - DIV 1 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+  
+
+/* DIV1 EM TELAS GRANDES APENAS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+  /* Esconde a .div1 por padrão */
+.div1 {
+  display: none;
+
+}
+
+/* Exibe a .div1 apenas em telas acima de 600px */
+@media screen and (min-width: 601px) {
+.div1 {
+    display: block;
+}
+}
+
+/* DIV1 EM TELAS GRANDES APENAS - END #################################################*/
+
+
+  .div1 {
+     position: relative; /* Necessário para usar posicionamento absoluto nos filhos */
+    width: 100%;
+}
+
+.imagem {
+    width: 100%; /* Largura total da viewport */
+    height: auto; /* Mantém proporção */
+}
+
+.textos-horizontais {
+    display: none; /* Esconde por padrão */
+    position: absolute; /* Permite posicionamento sobre a imagem */
+    top: 48%; /* Centraliza verticalmente */
+    left: 5%; /* Posiciona no lado esquerdo */
+    transform: translateY(-50%); /* Ajusta para alinhar ao centro verticalmente */
+    font-family: 'Lucida Sans', sans-serif;
+    text-align: left; /* Texto alinhado à esquerda */
+    background-color: transparent; /* Sem fundo por padrão */
+
+}
+  
+
+
+/* @@@@@@@@@@@@@ TEXTOS HORIZONTAIS EM TELAS ACIMA DE 600PX APENAS @@@@@@@@@@@@@@ */
+
+.textos-horizontais {
+  display: none; /* Esconde o elemento por padrão */
+}
+
+@media screen and (min-width: 601px) {
+  .textos-horizontais {
+      display: block; /* Mostra o elemento em telas acima de 599px */
+  }
+}
+
+
+/* ########## TEXTOS HORIZONTAIS ACIMA DE TELA 600X APENAS - END ################ */
+
+.texto-capa1, .texto-capa2, .texto-capa3 {
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: aparecer 1s forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.texto-capa3 {
+  transform: translateX(50%);
+  animation: aparecerDireita 1s forwards;
+}
+
+@keyframes aparecerDireita {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} 
+
+
+/* @@@@@@@@@@@@@@@@@ TEXTOS HORIZONTAIS MEDIDAS DIFERENTES EM TELAS ACIMA DE 600PX @@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+@media screen and (min-width: 601px) {
+
+
+  .texto-capa1 {
+
+    color: rgb(41, 41, 104);
+    font-size: 27px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -32px;
+    margin-left: 35px;
+
+    
+    
+    }
+    
+    .texto-capa2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 18px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    }
+    
+    .texto-capa3{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 25px;
+      margin-top: -10px;
+      color: rgb(32, 32, 32);
+      margin-left: 35px;
+      
+    }
+
+
+
+    .agendar-consulta-btn {
+      display: flex;
+      align-items: center; /* Alinha verticalmente o texto e a imagem */
+      justify-content: center; /* Centraliza o conteúdo dentro do botão */
+      background-color: #000000; /* cor do botão */
+      color: #ffffff; /* cor do texto branco */
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+      font-family: Arial, Helvetica, sans-serif;
+      height: 27px;
+      width: 210px;
+      margin-top: -17px;
+      margin-left: 35px;
+    }
+    
+    /* Alinhamento da imagem à esquerda do texto */
+    .agendar-consulta-btn img {
+      width: 23px; /* Define o tamanho da imagem */
+      height: auto; /* Mantém a proporção da imagem */
+      margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+    }
+    
+    /* Efeito hover do botão */
+    .agendar-consulta-btn:hover {
+      background-color: #000000; /* Cor do botão mais escura */
+    }
+    
+  
+}
+
+@media screen and (min-width: 650px) {
+
+
+  .texto-capa1 {
+
+    color: rgb(41, 41, 104);
+    font-size: 27px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    
+    }
+    
+    .texto-capa2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 18px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    }
+    
+    .texto-capa3{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 25px;
+      margin-top: -10px;
+      color: rgb(32, 32, 32);
+      margin-left: 35px;
+    }
+
+
+
+    .agendar-consulta-btn {
+      display: flex;
+      align-items: center; /* Alinha verticalmente o texto e a imagem */
+      justify-content: center; /* Centraliza o conteúdo dentro do botão */
+      background-color: #000000; /* cor do botão */
+      color: #ffffff; /* cor do texto branco */
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+      font-family: Arial, Helvetica, sans-serif;
+      height: 27px;
+      width: 210px;
+      margin-top: -17px;
+      margin-left: 35px;
+    }
+    
+    /* Alinhamento da imagem à esquerda do texto */
+    .agendar-consulta-btn img {
+      width: 23px; /* Define o tamanho da imagem */
+      height: auto; /* Mantém a proporção da imagem */
+      margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+    }
+    
+    /* Efeito hover do botão */
+    .agendar-consulta-btn:hover {
+      background-color: #050505; /* Cor do botão mais escura */
+    }
+    
+  
+}
+
+
+@media screen and (min-width: 768px) {
+
+
+  .texto-capa1 {
+
+    color: rgb(41, 41, 104);
+    font-size: 34px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    
+    }
+    
+    .texto-capa2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 18px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    }
+    
+    .texto-capa3{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 32px;
+      margin-top: -10px;
+      color: rgb(32, 32, 32);
+      margin-left: 35px;
+    }
+
+
+
+    .agendar-consulta-btn {
+      display: flex;
+      align-items: center; /* Alinha verticalmente o texto e a imagem */
+      justify-content: center; /* Centraliza o conteúdo dentro do botão */
+      background-color: #000000; /* cor do botão */
+      color: #ffffff; /* cor do texto branco */
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+      font-family: Arial, Helvetica, sans-serif;
+      height: 27px;
+      width: 210px;
+      margin-top: -17px;
+      margin-left: 35px;
+    }
+    
+    /* Alinhamento da imagem à esquerda do texto */
+    .agendar-consulta-btn img {
+      width: 23px; /* Define o tamanho da imagem */
+      height: auto; /* Mantém a proporção da imagem */
+      margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+    }
+    
+    /* Efeito hover do botão */
+    .agendar-consulta-btn:hover {
+      background-color: #000000; /* Cor do botão mais escura */
+    }
+  }
+
+  @media screen and (min-width: 790px) {
+
+
+    .texto-capa1 {
+  
+      color: rgb(41, 41, 104);
+      font-size: 35px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 35px;
+      
+      
+      }
+      
+      .texto-capa2 {
+      
+      color: rgb(41, 41, 104);
+      font-size: 18px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 35px;
+      
+      }
+      
+      .texto-capa3{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 32px;
+        margin-top: -10px;
+        color: rgb(32, 32, 32);
+        margin-left: 35px;
+      }
+  
+  
+  
+      .agendar-consulta-btn {
+        display: flex;
+        align-items: center; /* Alinha verticalmente o texto e a imagem */
+        justify-content: center; /* Centraliza o conteúdo dentro do botão */
+        background-color: #000000; /* cor do botão */
+        color: #ffffff; /* cor do texto branco */
+        border: none;
+        font-size: 17px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+        font-family: Arial, Helvetica, sans-serif;
+        height: 27px;
+        width: 210px;
+        margin-top: -17px;
+        margin-left: 35px;
+      }
+      
+      /* Alinhamento da imagem à esquerda do texto */
+      .agendar-consulta-btn img {
+        width: 23px; /* Define o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+      }
+      
+      /* Efeito hover do botão */
+      .agendar-consulta-btn:hover {
+        background-color: #000000; /* Cor do botão mais escura */
+      }
+      
+    
+  }
+  
+  @media screen and (min-width: 905px) {
+
+
+    .texto-capa1 {
+  
+      color: rgb(41, 41, 104);
+      font-size: 35px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -20px;
+      margin-left: 65px;
+      
+      
+      }
+      
+      .texto-capa2 {
+      
+      color: rgb(41, 41, 104);
+      font-size: 18px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 65px;
+      
+      }
+      
+      .texto-capa3{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 32px;
+        margin-top: -10px;
+        color: rgb(32, 32, 32);
+        margin-left: 65px;
+      }
+  
+  
+  
+      .agendar-consulta-btn {
+        display: flex;
+        align-items: center; /* Alinha verticalmente o texto e a imagem */
+        justify-content: center; /* Centraliza o conteúdo dentro do botão */
+        background-color: #000000; /* cor do botão */
+        color: #ffffff; /* cor do texto branco */
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+        font-family: Arial, Helvetica, sans-serif;
+        height: 27px;
+        width: 210px;
+        margin-top: -17px;
+         margin-left: 65px;
+      }
+      
+      /* Alinhamento da imagem à esquerda do texto */
+      .agendar-consulta-btn img {
+        width: 23px; /* Define o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+      }
+      
+      /* Efeito hover do botão */
+      .agendar-consulta-btn:hover {
+        background-color: #000000; /* Cor do botão mais escura */
+      }
+      
+      
+    
+  }
+  
+
+  @media screen and (min-width: 1024px) {
+
+
+    .texto-capa1 {
+  
+      color: rgb(41, 41, 104);
+      font-size: 46px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -10px;
+      margin-left: 65px;
+      
+      
+      
+      }
+      
+      .texto-capa2 {
+      
+      color: rgb(41, 41, 104);
+      font-size: 25px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 65px;
+      
+      }
+      
+      .texto-capa3{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 38px;
+        margin-top: -10px;
+        color: rgb(32, 32, 32);
+        margin-left: 65px;
+      }
+  
+  
+  
+      .agendar-consulta-btn {
+        display: flex;
+        align-items: center; /* Alinha verticalmente o texto e a imagem */
+        justify-content: center; /* Centraliza o conteúdo dentro do botão */
+        background-color: #000000; /* cor do botão */
+        color: #ffffff; /* cor do texto branco */
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+        font-family: Arial, Helvetica, sans-serif;
+        height: 36px;
+        width: 210px;
+        margin-top: -30px;
+        margin-left: 65px;
+    
+      }
+      
+      /* Alinhamento da imagem à esquerda do texto */
+      .agendar-consulta-btn img {
+        width: 23px; /* Define o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+      }
+      
+      /* Efeito hover do botão */
+      .agendar-consulta-btn:hover {
+        background-color: #000000; /* Cor do botão mais escura */
+      }
+    }
+
+
+    @media screen and (min-width: 1070px) {
+
+
+      .texto-capa1 {
+    
+        color: rgb(41, 41, 104);
+        font-size: 50px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin-top: 25px;
+        margin-left: 65px;
+        
+        
+        }
+        
+        .texto-capa2 {
+        
+        color: rgb(41, 41, 104);
+        font-size: 25px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin-top: -40px;
+        margin-left: 65px;
+        
+        }
+        
+        .texto-capa3{
+          font-family:Georgia, 'Times New Roman', Times, serif;
+          font-size: 45px;
+          margin-top: -5px;
+          color: rgb(32, 32, 32);
+          margin-left: 65px;
+        }
+    
+    
+    
+        .agendar-consulta-btn {
+          display: flex;
+          align-items: center; /* Alinha verticalmente o texto e a imagem */
+          justify-content: center; /* Centraliza o conteúdo dentro do botão */
+          background-color: #000000; /* cor do botão */
+          color: #ffffff; /* cor do texto branco */
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+          border-radius: 30px;
+          transition: background-color 0.3s ease;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+          font-family: Arial, Helvetica, sans-serif;
+          height: 36px;
+          width: 210px;
+          margin-top: -34px;
+          margin-left: 65px;
+      
+        }
+        
+        /* Alinhamento da imagem à esquerda do texto */
+        .agendar-consulta-btn img {
+          width: 23px; /* Define o tamanho da imagem */
+          height: auto; /* Mantém a proporção da imagem */
+          margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+        }
+        
+        /* Efeito hover do botão */
+        .agendar-consulta-btn:hover {
+          background-color: #000000; /* Cor do botão mais escura */
+        }
+      }
+  
+
+
+/* ##################### END TEXTOS HORIZONTAIS MEDIDAS DIFERENTES EM TELAS ACIMDA DE 600PX ################
+############################################################################### END #######################*/
+
+/*
+.texto-capa1 {
+
+  color: rgb(41, 41, 104);
+  font-size: 45px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa2 {
+  
+  color: rgb(41, 41, 104);
+  font-size: 30px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa3{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    margin-top: -10px;
+    color: rgb(32, 32, 32);
+  
+  }
+*/
+
+/* DIV1 BTN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ BTN DIV1 BTN DIV1 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */
+
+
+
+
+
+  .agendar-consulta-btn, .btn-servicos {
+    transition: transform 0.3s ease;
+  }
+
+  /* Quando o cursor passa sobre o botão */
+.agendar-consulta-btn:hover, .btn-servicos:hover {
+transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+}
+
+/* Quando o botão é clicado */
+.agendar-consulta-btn:active, .btn-servicos:active {
+transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
+}
+  
+/*#################################### BTN DIV1 END - BTN END - BTN END DIV 1 ###########################
+###################################################################################################### */
+
+
+
+  /* ############################################################################################
+ DIV 1 END - DIV 1 END - DIV 1 END - DIV 1 END - DIV 1 END - DIV 1 END #############################*/
+
+
+
+
+
+
+ /* @@@@@@@@@@@@ DIV 2 EM TELAS ABAIXO DE 600PX @@@@@@@@@@@@@@@22 */
+
+/* IMAGEM DO QUEM SOU APARECENDO EM TELAS ACIMA DE 599PX APENAS@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@ PARA COLOCAR A OUTRA IMAGEM, AMS IGUAL EM BAIXO @@@@@@@@@@@@@@ */
+
+
+
+  @media (max-width: 599px) {
+    .quemsou-leftside {
+      display: none;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .quemsou-leftside {
+      display: block;
+    }
+  }
+
+
+/* IMG QUEM SOU EM TELAS ACIMA DE 599 APENAS ##################################
+##### PARA POR ELA NO MEIO DOS TEXTO EM OUTRA DIV ################ */
+
+/* IMAGEM DO LEFSIDE QUEM SOU CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@2
+CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+@media (max-width: 599px) {
+  .quemsou-leftside1 .left-img1 {
+    width: 100%; /* Faz a imagem ocupar no máximo a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+}
+
+@media (min-width: 600px) {
+  .quemsou-leftside1 {
+    display: none; /* Esconde em telas maiores */
+  }
+}
+
+
+/*############### IMG QUEM SOU CONFIG NOM EO DO TEXTO ##################################
+########################################################################*/
+
+
+
+ /* Por padrão, esconde a div2 */
+ .div2 {
+  display: none; /* Esconde por padrão */
+  position: relative; /* Para posicionamento absoluto dos elementos internos */
+  width: 100%; /* Largura total */
+  height: 100%; /* Definindo uma altura fixa para a div2 */
+  
+ 
+}
+/* Exibe a div2 apenas em telas com largura abaixo de 600px */
+@media screen and (max-width: 600px) {
+.div2 {
+    display: block; /* Torna a div2 visível em telas pequenas */
+}
+}
+
+/*TEXTOS-horizontais2 DA DIV2 - TEXTOS DA DIV2 - TEXTOS DA DIV2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+
+/*TEXTOS HORIZIONTAIS CONTAINER 2 TAMANHS DIFERENTES TELAS MENORES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+/* BTN 2 DA DIV 2 BTN DIV 2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+.agendar-consulta-btn2 {
+  background-color: #000000; /* cor rosa */
+  color: #ffffff; /* cor do texto branco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */ 
+  display: flex; /* Permite alinhar o texto e a imagem */
+  align-items: center;
+  cursor: pointer; /* Mostra o cursor de clique */
+  z-index: 10; /* Garante que o botão fique acima da imagem */
+}
+
+.agendar-consulta-btn2 img {
+  width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+  height: auto;
+}
+
+
+/* #################### END BTN 2 DIV 2 BTN ##########################################################*/
+
+
+@media screen and (min-width: 320px) {
+
+
+  .textos-horizontais-container2 {
+    display: flex; /* Usando flexbox para centralizar */
+    justify-content: center; /* Alinha os itens no centro horizontal */
+    align-items: center; /* Alinha os itens no centro vertical */
+    height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+    position: absolute;
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .texto-capa1-2 {
+
+    color: rgb(41, 41, 104);
+    font-size: 25px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+  
+    }
+    
+    .texto-capa2-2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 16px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    
+    
+    }
+    
+    .texto-capa3-2{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 21px;
+      font-weight: bold;
+      color: rgb(32, 32, 32);
+      margin-top: 15px;
+     
+    }
+  
+
+  
+    }
+
+    @media screen and (min-width: 375px) {
+
+
+      .textos-horizontais-container2 {
+        display: flex; /* Usando flexbox para centralizar */
+        justify-content: center; /* Alinha os itens no centro horizontal */
+        align-items: center; /* Alinha os itens no centro vertical */
+        height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+        position: absolute;
+        margin-top: 105px;
+        left: 0;
+        width: 100%;
+      }
+
+
+      .agendar-consulta-btn2 {
+        position: absolute; /* Permite posicionar o botão em relação ao pai */
+        top: 495px;
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+        z-index: 10; /* Garante que o botão fique acima da imagem */
+        background-color: #000000; /* Cor do botão */
+        color: white; /* Cor do texto */
+        padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+        border: none; /* Remove a borda padrão */
+        border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+        cursor: pointer; /* Mostra o cursor de clique */
+        display: flex; /* Permite alinhar o texto e a imagem */
+        align-items: center;
+        gap: 8px; /* Espaço entre o texto e a imagem */
+        font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+        font-family: Arial, Helvetica, sans-serif;
+        white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+      }
+      
+      .agendar-consulta-btn2 img {
+        width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+        height: auto;
+      }
+    
+      .texto-capa1-2 {
+
+        color: rgb(41, 41, 104);
+        font-size: 30px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+        
+        }
+        
+        .texto-capa2-2 {
+        
+        color: rgb(41, 41, 104);
+        font-size: 20px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+        
+        }
+        
+        .texto-capa3-2{
+          font-family:Georgia, 'Times New Roman', Times, serif;
+          font-size: 25px;
+          margin-top: -10px;
+          color: rgb(32, 32, 32);
+        
+        }
+      
+      
+        }
+
+        @media screen and (min-width: 425px) {
+
+
+          .textos-horizontais-container2 {
+            display: flex; /* Usando flexbox para centralizar */
+            justify-content: center; /* Alinha os itens no centro horizontal */
+            align-items: center; /* Alinha os itens no centro vertical */
+            height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+            position: absolute;
+            margin-top: 110px;
+            left: 0;
+            width: 100%;
+          }
+        
+          .agendar-consulta-btn2 {
+            position: absolute; /* Permite posicionar o botão em relação ao pai */
+            top: 535px;
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+            z-index: 10; /* Garante que o botão fique acima da imagem */
+            background-color: #000000; /* Cor do botão */
+            color: white; /* Cor do texto */
+            padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+            border: none; /* Remove a borda padrão */
+            border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+            cursor: pointer; /* Mostra o cursor de clique */
+            display: flex; /* Permite alinhar o texto e a imagem */
+            align-items: center;
+            gap: 8px; /* Espaço entre o texto e a imagem */
+            font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+          }
+          
+          .agendar-consulta-btn2 img {
+            width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+            height: auto;
+          }
+
+
+          .texto-capa1-2 {
+
+            color: rgb(41, 41, 104);
+            font-size: 34px;
+            font-weight: bold;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+            
+            }
+            
+            .texto-capa2-2 {
+            
+            color: rgb(41, 41, 104);
+            font-size: 20px;
+            font-weight: bold;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+            
+            }
+            
+            .texto-capa3-2{
+              font-family:Georgia, 'Times New Roman', Times, serif;
+              font-size: 25px;
+              margin-top: -10px;
+              color: rgb(32, 32, 32);
+            
+            }
+          
+          
+            }
+
+            @media screen and (min-width: 475px) {
+
+
+              .textos-horizontais-container2 {
+                display: flex; /* Usando flexbox para centralizar */
+                justify-content: center; /* Alinha os itens no centro horizontal */
+                align-items: center; /* Alinha os itens no centro vertical */
+                height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+                position: absolute;
+                margin-top: 150px;
+                left: 0;
+                width: 100%;
+              }
+
+              .agendar-consulta-btn2 {
+                position: absolute; /* Permite posicionar o botão em relação ao pai */
+                top: 615px;
+                left: 50%; /* Centraliza horizontalmente */
+                transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+                z-index: 10; /* Garante que o botão fique acima da imagem */
+                background-color: #000000; /* Cor do botão */
+                color: white; /* Cor do texto */
+                padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+                border: none; /* Remove a borda padrão */
+                border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+                cursor: pointer; /* Mostra o cursor de clique */
+                display: flex; /* Permite alinhar o texto e a imagem */
+                align-items: center;
+                gap: 8px; /* Espaço entre o texto e a imagem */
+                font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+                font-family: Arial, Helvetica, sans-serif;
+                white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+              }
+              
+              .agendar-consulta-btn2 img {
+                width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+                height: auto;
+              }
+    
+    
+              .texto-capa1-2 {
+    
+                color: rgb(41, 41, 104);
+                font-size: 40px;
+                font-weight: bold;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                
+                
+                }
+                
+                .texto-capa2-2 {
+                
+                color: rgb(41, 41, 104);
+                font-size: 20px;
+                font-weight: bold;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                
+                
+                }
+                
+                .texto-capa3-2{
+                  font-family:Georgia, 'Times New Roman', Times, serif;
+                  font-size: 35px;
+                  margin-top: -10px;
+                  color: rgb(32, 32, 32);
+                
+                }
+
+
+            }
+
+
+              @media screen and (min-width: 525px) {
+
+
+                .textos-horizontais-container2 {
+                  display: flex; /* Usando flexbox para centralizar */
+                  justify-content: center; /* Alinha os itens no centro horizontal */
+                  align-items: center; /* Alinha os itens no centro vertical */
+                  height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+                  position: absolute;
+                  margin-top: 140px;
+                  left: 0;
+                  width: 100%;
+                }
+              
+                .agendar-consulta-btn2 {
+                  position: absolute; /* Permite posicionar o botão em relação ao pai */
+                  top: 670px;
+                  left: 50%; /* Centraliza horizontalmente */
+                  transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+                  z-index: 10; /* Garante que o botão fique acima da imagem */
+                  background-color: #000000; /* Cor do botão */
+                  color: white; /* Cor do texto */
+                  padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+                  border: none; /* Remove a borda padrão */
+                  border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+                  cursor: pointer; /* Mostra o cursor de clique */
+                  display: flex; /* Permite alinhar o texto e a imagem */
+                  align-items: center;
+                  gap: 8px; /* Espaço entre o texto e a imagem */
+                  font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+                  font-family: Arial, Helvetica, sans-serif;
+                  white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+                }
+                
+                .agendar-consulta-btn2 img {
+                  width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+                  height: auto;
+                }
+      
+      
+                .texto-capa1-2 {
+      
+                  color: rgb(41, 41, 104);
+                  font-size: 50px;
+                  font-weight: bold;
+                  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  
+                  
+                  }
+                  
+                  .texto-capa2-2 {
+                  
+                  color: rgb(41, 41, 104);
+                  font-size: 20px;
+                  font-weight: bold;
+                  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  
+                  
+                  }
+                  
+                  .texto-capa3-2{
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    font-size: 35px;
+                    margin-top: -10px;
+                    color: rgb(32, 32, 32);
+                  
+                  }
+
+            
+              
+                }
+
+                /* TEXTOS HORIZONTAIS CONTAINER 2 TAMANHOS EM TELAS MENORES END ######################
+                #####################################################################################*/
+        
+    
+
+
+    /* Centraliza o conteúdo dentro de .div2 */
+.textos-horizontais-container2 {
+  display: flex; /* Usando flexbox para centralizar */
+  justify-content: center; /* Alinha os itens no centro horizontal */
+  align-items: center; /* Alinha os itens no centro vertical */
+  height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Textos dentro de .textos-horizontais2 */
+.textos-horizontais2 {
+  color: rgb(47, 38, 104);
+  text-align: center; /* Centraliza o texto */
+  max-width: 90%; /* Garante que o texto não ultrapasse a largura da tela */
+}
+
+.texto-capa1-2, .texto-capa2-2, .texto-capa3-2 {
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: aparecer 1s forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.texto-capa3 {
+  transform: translateX(50%);
+  animation: aparecerDireita 1s forwards;
+}
+
+@keyframes aparecerDireita {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} 
+
+/*
+
+.texto-capa1-2 {
+
+  color: rgb(41, 41, 104);
+  font-size: 20px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa2-2 {
+  
+  color: rgb(41, 41, 104);
+  font-size: 20px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa3-2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: -10px;
+    color: rgb(32, 32, 32);
+  
+  }
+
+  */
+
+
+
+/* TEXTOS DA DIV2 END - TEXTOS DA DIV2 END ########################################## */
+
+ /*####### DIV2 ABAIXO DE TELAS 600PX END ################ */
+
+
+ /* @@@@ DIV3PINK BTN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+ 
+ /* Media query para telas menores que 600px */
+@media (max-width: 599px) {
+  .div3pink {
+    display: flex; /* Exibe a div como flexbox */
+  }
+}
+
+/* Media query para telas maiores ou iguais a 600px */
+@media (min-width: 600px) {
+  .div3pink {
+    display: none; /* Esconde a div */
+  }
+}
+
+/* Estilos principais da .div3pink */
+.div3pink {
+  height: 100px;
+  margin-top: -9px; 
+  background-color: #ffbac9;
+  justify-content: center; /* Centraliza o botão horizontalmente */
+  align-items: center; /* Centraliza o botão verticalmente */
+  z-index: 2;
+}
+
+
+
+
+ /*############## DIV3PINK BTN #######################################################
+ ########################################################################*/
+
+/* DIV  QUEM SOU EU @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+ 
+
+.quemsou{
+  margin-top: -4px;
+
+
+}
+
+
+.quemsou-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Espaço entre os lados */
+  flex-wrap: wrap; /* Para responsividade */
+  padding: 20px;
+}
+
+.quemsou h2{
+color: rgb(41, 41, 104);
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: normal;
+font-size: 27px;
+}
+
+.quemsou p, li{
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #3d3838;
+  
+}
+
+.quemsou-leftside img {
+  margin-top: -285px;
+  width: 100%; /* Imagem ajusta ao tamanho disponível */
+  max-width: 500px; /* Limite de largura para a imagem */
+}
+
+.quemsou-rightside {
+  margin-top: 80px;
+  flex: 1;
+}
+
+/* Para telas acima de 600px */
+@media (min-width: 600px) {
+  .quemsou-rightside{
+    margin-right: 30px;
+  }
+
+  .quemsou-content {
+      flex-direction: row; /* Muda para lado a lado */
+      align-items: center; /* Centraliza verticalmente */
+  }
+
+  .quemsou-leftside, .quemsou-rightside {
+      flex: 1; /* Divide igualmente o espaço */
+  }
+
+  .quemsou-leftside img {
+
+      max-width: 100%; /* Imagem ajusta ao lado esquerdo */
+  }
+}
+
+.center-btn{
+  text-align: center;
+}
+
+.btn-servicos {
+  background-color: #000000; /* cor rosa */
+  color: #ffffff; /* cor do texto branco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */
+  }
+
+  .btn-sevicos :hover {
+    background-color: #000000; /* cor rosa mais escura ao passar o mouse */
+    }
+
+/*########### END DIV QUEM SOU EU ###################/
+
+/* @@@@@@@@@@@ SERVICOS - QUADRADOS  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@ SERVIÇOS QUADRADOS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+.servicos{
+  text-align: center;
+  background-color:  #fcd3e7;
+  padding: 20px; /* Adicionado para espaçamento interno */
+  margin-top: -3px; /* Remover margem superior */
+}
+
+
+.texto-servicos1 {
+  max-width: 600px; /* Largura máxima do texto */
+  margin: 0 auto; /* Centralizar o texto */
+  text-align: left;
+}
+
+
+.titulo-servicos1{
+  margin-top:78px !important; 
+  font-size: 30px;
+  color: rgb(47, 38, 104);
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.quadrado-servico p{
+  font-weight: bolder;
+  font-size: 14px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}  
+
+
+.txt-quad {
+  padding-left: 12px; /* Adiciona padding à esquerda */
+  padding-right: 12px; /* Adiciona padding à direita */
+  }
+  
+  @media screen and (min-width: 320px) {
+
+    .quadrados-servicos a {
+      text-decoration: none; /* Remove a decoração de link */
+    }
+  
+  .quadrado-servico {
+    text-align: center; /* Centralize o texto horizontalmente */
+    background-size: cover; /* Faz com que a imagem cubra todo o espaço do quadrado */
+    background-position: center; /* Centraliza a imagem dentro do quadrado */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+   
+  }
+  
+
+
+  }
+
+
+@media screen and (max-width: 767px) {
+
+  .quadrados-servicos {
+    display: flex;
+    flex-direction: column; /* Dispor os quadrados em coluna */
+    align-items: center; /* Centralizar os quadrados */
+    margin-top: 20px;
+  }
+
+  .quadrado-servico {
+    width: 80%; /* Largura dos quadrados */
+    height: 200px; /* Altura dos quadrados */
+    background-color: #ffffff; /* cor de fundo dos quadrados */
+    margin-bottom: 20px; /* Espaçamento abaixo dos quadrados */
+      }
+
+ 
+
+}
+
+     
+@media screen and (min-width: 768px) {
+
+  .quadrados-servicos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* espaçamento uniforme entre os quadrados */
+    padding: 0 20px; /* Adicionado padding nas laterais */
+    max-width: 1100px; /* Limitar a largura para centralizar os quadrados */
+    margin: 20px auto; /* Centralizar os quadrados */
+    box-sizing: border-box; /* Incluir padding e bordas na largura total */
+  }
+
+  .quadrado-servico {
+    width: calc(25% - 20px); /* Largura dos quadrados com margens */
+    height: 250px; /* Altura dos quadrados */
+    background-color: #bbb6e7; /* cor de fundo dos quadrados */
+    margin-bottom: 20px; /* Espaçamento abaixo dos quadrados */
+    text-align: center; /* Centralize o texto horizontalmente */
+    background-size: cover; /* Faz com que a imagem cubra todo o espaço do quadrado */
+    background-position: center; /* Centraliza a imagem dentro do quadrado */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */
+  }
+
+
+  .quadrado-servico:hover{
+    background-color:#c3bfe7; /* cor rosa mais escura ao passar o mouse */
+    }
+
+
+    /* Quando o cursor passa sobre o botão */
+.quadrado-servico:hover{
+transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+}
+
+
+  .quadrado-servico{
+    transition: transform 0.3s ease;
+  }
+
+
+/* Quando o botão é clicado */
+.quadrado-servico:active{
+transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
+}
+
+
+}
+
+/* ############## END SERVICOS - END SERVICOS QUADRADOS ##########################
+###################################### END SERVICOS QUADRADOS ########################*/  
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@ DEPOIMENTOS - DEPOIMENTS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+@media (min-width: 600px){
+
+
+
+}
+
+
+.titulo-depoimentos{
+  font-size: 30px;
+  color: rgb(65, 65, 145);
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 100px;
+}
+
+
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+max-width: 1000px;
+position: relative;
+margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+margin-top: -22px;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+color: #f2f2f2;
+font-size: 15px;
+padding: 8px 12px;
+position: absolute;
+bottom: 8px;
+width: 100%;
+text-align: center;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+.mySlides img {
+max-width: 35%; /* Limita a largura máxima da imagem ao tamanho do contêiner */
+max-height: 300px; /* Define uma altura máxima para a imagem */
+height: auto; /* Mantém a proporção da imagem */
+margin: 0 auto; /* Centraliza horizontalmente */
+display: block; /* Garante que a imagem seja tratada como um bloco */
+} 
+
+@media (max-width: 600px){
+
+  .mySlides img {
+    max-width: 75%; /* Limita a largura máxima da imagem ao tamanho do contêiner */
+    max-height: 300px; /* Define uma altura máxima para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: block; /* Garante que a imagem seja tratada como um bloco */
+    } 
+    
+}
+
+
+
+
+/* ################################## DEPOIMENT END DEPOIMENTOS END ##############
+####################################################################################### */
+
+  /*@@@@@@@@@@@@@@@@@@22 RESPOSTAS PERGUNTAS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ respostas perguntas faq @@@@@@@@@@@@@ faq @@@@@@@@@@ faq @@ */
+
+  .resposta{
+
+    font-weight: normal;
+    font-size: 15px;  
+    color: rgb(37, 37, 37);
+    }
+    .accordion-button{
+    color: rgb(36, 36, 36);
+    font-size: 18px;
+    }
+    
+    .titulo-faq{
+    margin-top: 99px;
+    }
+    
+    .faq {
+    padding-top: 1px; /* Adiciona espaço extra no topo da div FAQ */
+    padding-bottom: 100px; /* Adiciona espaço extra na parte inferior da div FAQ */
+    }
+    
+    .informacoes {
+    margin-top: 0; /* Remova a margem superior da seção Informações */
+    } 
+    
+    .accordion {
+    max-width: 600px; /* Defina a largura máxima para o acordeão */
+    margin: 0 auto; /* Centralize o acordeão */
+    }
+    
+    .accordion-item {
+    border-bottom: 1px solid #f1c9c9; /* Adicione uma linha divisória entre as perguntas */
+    }
+    
+    .accordion-button {
+    background-color:  #fcd3e7; /* Cor de fundo para as perguntas */
+    width: 100%;
+    text-align: left;
+    padding: 10px 40px 10px 30px; /* Adiciona espaço à esquerda */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative; /* Adicione posição relativa para que possamos posicionar a seta */
+    }
+    
+    .accordion-content {
+    display: none; /* Oculte o conteúdo das respostas */
+    padding: 10px 20px; /* Adiciona espaço à esquerda */
+    background-color:  #fcd3e7; /* Defina o fundo como branco */
+    }
+    
+    .arrow {
+    position: absolute; /* Posicionamento absoluto em relação ao botão */
+    left: 10px; /* Posicionamento para o lado esquerdo */
+    top: 50%; /* Alinhar verticalmente */
+    transform: translateY(-50%); /* Ajustar verticalmente */
+    transition: transform 0.3s ease; /* Adicionar transição */
+    }
+    
+    .accordion-item.active .arrow {
+    transform: translateY(-50%) rotate(180deg); /* Girar a seta para cima quando a resposta estiver aberta */
+    }
+    
+    
+    
+    
+    .accordion-item.active .accordion-content {
+    display: block; /* Mostrar o conteúdo da resposta quando o item estiver ativo */
+    }
+    
+    
+    
+    .texto-contato {
+    margin-left: 10px; /* Adicione um espaço entre a imagem e o texto */
+    }
+    
+
+  /*######################################## RESPOSTAS PERGUNTAS END ############
+  ############################################## end respostas*/
+
+  /* @@@@@@@@ div contatos - div contatos @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  @@@@@@@@@@@@@@@@@@@ div contatos @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+  .titulo-servicos{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 100px;
+    font-size: 30px;
+    color: rgb(47, 38, 104);
+    text-align: center;
+  }
+
+  .container1 {
+    display: flex; /* Use flexbox para organizar os itens */
+    align-items: center; /* Alinhe os itens verticalmente */
+  margin-left: 120px;
+  }
+
+  .textoa {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -1px;
+    flex: 1; /* Permita que o texto ocupe o espaço restante */
+  }
+
+
+  .link-sem-decoracao1 a {
+    text-decoration: none; /* Remover sublinhado */
+    color: inherit; /* Herdar a cor do texto do elemento pai */
+    color: #5a5a5a;
+    margin-left: 10px;
+    } 
+
+    
+    
+    .textoa {
+      margin-top: -1px;
+      flex: 1; /* Permita que o texto ocupe o espaço restante */
+    }
+
+
+  @media screen and (min-width :320px){
+
+
+
+
+
+    .textoa{
+    margin-right: 100px;
+    margin-left: -100px;
+    }
+    
+    .textoa1{
+    margin-right: 100px;
+    margin-left: -100px;
+    width: 25px; /* Defina a largura da imagem */
+    height: auto; /* Mantenha a proporção da imagem */  
+    
+    }
+  }    
+
+  @media screen and (min-width: 768px) {
+
+    .container1{
+      margin-left: 300px !important;
+    }
+  }  
+
+  /* ############## div contatos end - contatos end - contatos end #################
+  ####################### contatos end ################################## */
+
+
+  /*@@@@@@@@@@@@@@@@@@@@@@@@ div informacoes @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  @@@@@@@@@@@@@@@ informacoes div @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2*/
+
+
+  .informacoes {
+    background-color:  #fcd3e7;
+    height: 230px; /* altura de até 100px */
+    margin: 0px auto 0; /* remover a margem branca e adicionar margem superior e inferior */
+    display: flex; /* usar flexbox */
+    align-items: center; /* centralizar verticalmente */
+    justify-content: center; /* centralizar horizontalmente */
+    position: relative; /* Adicione posição relativa para que possamos posicionar a div filho absolutamente */
+    margin-top: 0; /* Remova a margem superior da seção Informações */
+    }
+    
+
+    .informacoes img {
+
+      max-width: 250px; /* tamanho de até 80px para a imagem */
+      display: block; /* centralizar a imagem */
+      margin: 0 auto; /* centralizar a imagem */
+      }
+
+     
+
+    .copyright{
+      
+      text-align: center;
+      
+      }
+      
+      .copyright p{
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(43, 42, 42);
+        font-size: 13px;
+        position: absolute; /* Posicione absolutamente em relação à div pai */
+        bottom: 0; /* Alinhe a div filho no fundo da div pai */
+        left: 0; /* Alinhe a div filho no canto esquerdo da div pai */
+        width: 100%; /* Defina a largura para ocupar toda a largura da div pai */ 
+    
+      }
+
+
+  /*#################### DIV INFORMACOES END - INFORMACOES END ####################
+  #######################################################################################*/
+
+  /*@@@@@@@ div whaap div whaap @@@ div whaap @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22*/
+
+  .whapp img {
+    width: 80px; /* Definir uma largura fixa para a imagem */
+    height: auto; /* Manter a proporção da imagem */
+    }
+
+    .fixed-image-link {
+      position: fixed; /* Fixar a posição */
+      bottom: 10px; /* Distância do fundo */
+      right: 10px; /* Distância da direita */
+      z-index: 9999; /* Garantir que esteja acima de outros elementos */
+      
+    }
+    
+
+    /*########### div whapp end ###### WHAAP END #############################################
+    ######################################################################################*/
+
+
+    /* @@ EFEITOS DE SURGIR DIREITO E ESQUERDO @@@@@@@@@@@@@@@@@@@@@@2*/
+
+    /* Estilos iniciais para os textos */
+.animate-left {
+  opacity: 0;
+  transform: translateX(-100px); /* Sai da tela pela esquerda */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(100px); /* Sai da tela pela direita */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Estilos quando visíveis */
+.animate-left.visible, .animate-right.visible {
+  opacity: 1;
+  transform: translateX(0); /* Retorna à posição original */
+}
+
+/* Estilos iniciais para os textos */
+.animate-top {
+  opacity: 0;
+  transform: translateY(-50px); /* Posiciona o texto acima */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Estilos quando visíveis */
+.animate-top.visible {
+  opacity: 1;
+  transform: translateY(0); /* Move para a posição original */
+}
+  
+
+
+
+    /* EFEITOS SURGIR END #######################################################################*/
+
+
+      /* https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css  STYLE CSS */
+
+
+  [data-aos][data-aos][data-aos-duration="50"],body[data-aos-duration="50"] [data-aos]{transition-duration:50ms}[data-aos][data-aos][data-aos-delay="50"],body[data-aos-delay="50"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="50"].aos-animate,body[data-aos-delay="50"] [data-aos].aos-animate{transition-delay:50ms}[data-aos][data-aos][data-aos-duration="100"],body[data-aos-duration="100"] [data-aos]{transition-duration:.1s}[data-aos][data-aos][data-aos-delay="100"],body[data-aos-delay="100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="100"].aos-animate,body[data-aos-delay="100"] [data-aos].aos-animate{transition-delay:.1s}[data-aos][data-aos][data-aos-duration="150"],body[data-aos-duration="150"] [data-aos]{transition-duration:.15s}[data-aos][data-aos][data-aos-delay="150"],body[data-aos-delay="150"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="150"].aos-animate,body[data-aos-delay="150"] [data-aos].aos-animate{transition-delay:.15s}[data-aos][data-aos][data-aos-duration="200"],body[data-aos-duration="200"] [data-aos]{transition-duration:.2s}[data-aos][data-aos][data-aos-delay="200"],body[data-aos-delay="200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="200"].aos-animate,body[data-aos-delay="200"] [data-aos].aos-animate{transition-delay:.2s}[data-aos][data-aos][data-aos-duration="250"],body[data-aos-duration="250"] [data-aos]{transition-duration:.25s}[data-aos][data-aos][data-aos-delay="250"],body[data-aos-delay="250"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="250"].aos-animate,body[data-aos-delay="250"] [data-aos].aos-animate{transition-delay:.25s}[data-aos][data-aos][data-aos-duration="300"],body[data-aos-duration="300"] [data-aos]{transition-duration:.3s}[data-aos][data-aos][data-aos-delay="300"],body[data-aos-delay="300"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="300"].aos-animate,body[data-aos-delay="300"] [data-aos].aos-animate{transition-delay:.3s}[data-aos][data-aos][data-aos-duration="350"],body[data-aos-duration="350"] [data-aos]{transition-duration:.35s}[data-aos][data-aos][data-aos-delay="350"],body[data-aos-delay="350"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="350"].aos-animate,body[data-aos-delay="350"] [data-aos].aos-animate{transition-delay:.35s}[data-aos][data-aos][data-aos-duration="400"],body[data-aos-duration="400"] [data-aos]{transition-duration:.4s}[data-aos][data-aos][data-aos-delay="400"],body[data-aos-delay="400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="400"].aos-animate,body[data-aos-delay="400"] [data-aos].aos-animate{transition-delay:.4s}[data-aos][data-aos][data-aos-duration="450"],body[data-aos-duration="450"] [data-aos]{transition-duration:.45s}[data-aos][data-aos][data-aos-delay="450"],body[data-aos-delay="450"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="450"].aos-animate,body[data-aos-delay="450"] [data-aos].aos-animate{transition-delay:.45s}[data-aos][data-aos][data-aos-duration="500"],body[data-aos-duration="500"] [data-aos]{transition-duration:.5s}[data-aos][data-aos][data-aos-delay="500"],body[data-aos-delay="500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="500"].aos-animate,body[data-aos-delay="500"] [data-aos].aos-animate{transition-delay:.5s}[data-aos][data-aos][data-aos-duration="550"],body[data-aos-duration="550"] [data-aos]{transition-duration:.55s}[data-aos][data-aos][data-aos-delay="550"],body[data-aos-delay="550"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="550"].aos-animate,body[data-aos-delay="550"] [data-aos].aos-animate{transition-delay:.55s}[data-aos][data-aos][data-aos-duration="600"],body[data-aos-duration="600"] [data-aos]{transition-duration:.6s}[data-aos][data-aos][data-aos-delay="600"],body[data-aos-delay="600"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="600"].aos-animate,body[data-aos-delay="600"] [data-aos].aos-animate{transition-delay:.6s}[data-aos][data-aos][data-aos-duration="650"],body[data-aos-duration="650"] [data-aos]{transition-duration:.65s}[data-aos][data-aos][data-aos-delay="650"],body[data-aos-delay="650"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="650"].aos-animate,body[data-aos-delay="650"] [data-aos].aos-animate{transition-delay:.65s}[data-aos][data-aos][data-aos-duration="700"],body[data-aos-duration="700"] [data-aos]{transition-duration:.7s}[data-aos][data-aos][data-aos-delay="700"],body[data-aos-delay="700"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="700"].aos-animate,body[data-aos-delay="700"] [data-aos].aos-animate{transition-delay:.7s}[data-aos][data-aos][data-aos-duration="750"],body[data-aos-duration="750"] [data-aos]{transition-duration:.75s}[data-aos][data-aos][data-aos-delay="750"],body[data-aos-delay="750"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="750"].aos-animate,body[data-aos-delay="750"] [data-aos].aos-animate{transition-delay:.75s}[data-aos][data-aos][data-aos-duration="800"],body[data-aos-duration="800"] [data-aos]{transition-duration:.8s}[data-aos][data-aos][data-aos-delay="800"],body[data-aos-delay="800"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="800"].aos-animate,body[data-aos-delay="800"] [data-aos].aos-animate{transition-delay:.8s}[data-aos][data-aos][data-aos-duration="850"],body[data-aos-duration="850"] [data-aos]{transition-duration:.85s}[data-aos][data-aos][data-aos-delay="850"],body[data-aos-delay="850"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="850"].aos-animate,body[data-aos-delay="850"] [data-aos].aos-animate{transition-delay:.85s}[data-aos][data-aos][data-aos-duration="900"],body[data-aos-duration="900"] [data-aos]{transition-duration:.9s}[data-aos][data-aos][data-aos-delay="900"],body[data-aos-delay="900"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="900"].aos-animate,body[data-aos-delay="900"] [data-aos].aos-animate{transition-delay:.9s}[data-aos][data-aos][data-aos-duration="950"],body[data-aos-duration="950"] [data-aos]{transition-duration:.95s}[data-aos][data-aos][data-aos-delay="950"],body[data-aos-delay="950"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="950"].aos-animate,body[data-aos-delay="950"] [data-aos].aos-animate{transition-delay:.95s}[data-aos][data-aos][data-aos-duration="1000"],body[data-aos-duration="1000"] [data-aos]{transition-duration:1s}[data-aos][data-aos][data-aos-delay="1000"],body[data-aos-delay="1000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1000"].aos-animate,body[data-aos-delay="1000"] [data-aos].aos-animate{transition-delay:1s}[data-aos][data-aos][data-aos-duration="1050"],body[data-aos-duration="1050"] [data-aos]{transition-duration:1.05s}[data-aos][data-aos][data-aos-delay="1050"],body[data-aos-delay="1050"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1050"].aos-animate,body[data-aos-delay="1050"] [data-aos].aos-animate{transition-delay:1.05s}[data-aos][data-aos][data-aos-duration="1100"],body[data-aos-duration="1100"] [data-aos]{transition-duration:1.1s}[data-aos][data-aos][data-aos-delay="1100"],body[data-aos-delay="1100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1100"].aos-animate,body[data-aos-delay="1100"] [data-aos].aos-animate{transition-delay:1.1s}[data-aos][data-aos][data-aos-duration="1150"],body[data-aos-duration="1150"] [data-aos]{transition-duration:1.15s}[data-aos][data-aos][data-aos-delay="1150"],body[data-aos-delay="1150"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1150"].aos-animate,body[data-aos-delay="1150"] [data-aos].aos-animate{transition-delay:1.15s}[data-aos][data-aos][data-aos-duration="1200"],body[data-aos-duration="1200"] [data-aos]{transition-duration:1.2s}[data-aos][data-aos][data-aos-delay="1200"],body[data-aos-delay="1200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1200"].aos-animate,body[data-aos-delay="1200"] [data-aos].aos-animate{transition-delay:1.2s}[data-aos][data-aos][data-aos-duration="1250"],body[data-aos-duration="1250"] [data-aos]{transition-duration:1.25s}[data-aos][data-aos][data-aos-delay="1250"],body[data-aos-delay="1250"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1250"].aos-animate,body[data-aos-delay="1250"] [data-aos].aos-animate{transition-delay:1.25s}[data-aos][data-aos][data-aos-duration="1300"],body[data-aos-duration="1300"] [data-aos]{transition-duration:1.3s}[data-aos][data-aos][data-aos-delay="1300"],body[data-aos-delay="1300"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1300"].aos-animate,body[data-aos-delay="1300"] [data-aos].aos-animate{transition-delay:1.3s}[data-aos][data-aos][data-aos-duration="1350"],body[data-aos-duration="1350"] [data-aos]{transition-duration:1.35s}[data-aos][data-aos][data-aos-delay="1350"],body[data-aos-delay="1350"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1350"].aos-animate,body[data-aos-delay="1350"] [data-aos].aos-animate{transition-delay:1.35s}[data-aos][data-aos][data-aos-duration="1400"],body[data-aos-duration="1400"] [data-aos]{transition-duration:1.4s}[data-aos][data-aos][data-aos-delay="1400"],body[data-aos-delay="1400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1400"].aos-animate,body[data-aos-delay="1400"] [data-aos].aos-animate{transition-delay:1.4s}[data-aos][data-aos][data-aos-duration="1450"],body[data-aos-duration="1450"] [data-aos]{transition-duration:1.45s}[data-aos][data-aos][data-aos-delay="1450"],body[data-aos-delay="1450"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1450"].aos-animate,body[data-aos-delay="1450"] [data-aos].aos-animate{transition-delay:1.45s}[data-aos][data-aos][data-aos-duration="1500"],body[data-aos-duration="1500"] [data-aos]{transition-duration:1.5s}[data-aos][data-aos][data-aos-delay="1500"],body[data-aos-delay="1500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1500"].aos-animate,body[data-aos-delay="1500"] [data-aos].aos-animate{transition-delay:1.5s}[data-aos][data-aos][data-aos-duration="1550"],body[data-aos-duration="1550"] [data-aos]{transition-duration:1.55s}[data-aos][data-aos][data-aos-delay="1550"],body[data-aos-delay="1550"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1550"].aos-animate,body[data-aos-delay="1550"] [data-aos].aos-animate{transition-delay:1.55s}[data-aos][data-aos][data-aos-duration="1600"],body[data-aos-duration="1600"] [data-aos]{transition-duration:1.6s}[data-aos][data-aos][data-aos-delay="1600"],body[data-aos-delay="1600"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1600"].aos-animate,body[data-aos-delay="1600"] [data-aos].aos-animate{transition-delay:1.6s}[data-aos][data-aos][data-aos-duration="1650"],body[data-aos-duration="1650"] [data-aos]{transition-duration:1.65s}[data-aos][data-aos][data-aos-delay="1650"],body[data-aos-delay="1650"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1650"].aos-animate,body[data-aos-delay="1650"] [data-aos].aos-animate{transition-delay:1.65s}[data-aos][data-aos][data-aos-duration="1700"],body[data-aos-duration="1700"] [data-aos]{transition-duration:1.7s}[data-aos][data-aos][data-aos-delay="1700"],body[data-aos-delay="1700"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1700"].aos-animate,body[data-aos-delay="1700"] [data-aos].aos-animate{transition-delay:1.7s}[data-aos][data-aos][data-aos-duration="1750"],body[data-aos-duration="1750"] [data-aos]{transition-duration:1.75s}[data-aos][data-aos][data-aos-delay="1750"],body[data-aos-delay="1750"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1750"].aos-animate,body[data-aos-delay="1750"] [data-aos].aos-animate{transition-delay:1.75s}[data-aos][data-aos][data-aos-duration="1800"],body[data-aos-duration="1800"] [data-aos]{transition-duration:1.8s}[data-aos][data-aos][data-aos-delay="1800"],body[data-aos-delay="1800"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1800"].aos-animate,body[data-aos-delay="1800"] [data-aos].aos-animate{transition-delay:1.8s}[data-aos][data-aos][data-aos-duration="1850"],body[data-aos-duration="1850"] [data-aos]{transition-duration:1.85s}[data-aos][data-aos][data-aos-delay="1850"],body[data-aos-delay="1850"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1850"].aos-animate,body[data-aos-delay="1850"] [data-aos].aos-animate{transition-delay:1.85s}[data-aos][data-aos][data-aos-duration="1900"],body[data-aos-duration="1900"] [data-aos]{transition-duration:1.9s}[data-aos][data-aos][data-aos-delay="1900"],body[data-aos-delay="1900"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1900"].aos-animate,body[data-aos-delay="1900"] [data-aos].aos-animate{transition-delay:1.9s}[data-aos][data-aos][data-aos-duration="1950"],body[data-aos-duration="1950"] [data-aos]{transition-duration:1.95s}[data-aos][data-aos][data-aos-delay="1950"],body[data-aos-delay="1950"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1950"].aos-animate,body[data-aos-delay="1950"] [data-aos].aos-animate{transition-delay:1.95s}[data-aos][data-aos][data-aos-duration="2000"],body[data-aos-duration="2000"] [data-aos]{transition-duration:2s}[data-aos][data-aos][data-aos-delay="2000"],body[data-aos-delay="2000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2000"].aos-animate,body[data-aos-delay="2000"] [data-aos].aos-animate{transition-delay:2s}[data-aos][data-aos][data-aos-duration="2050"],body[data-aos-duration="2050"] [data-aos]{transition-duration:2.05s}[data-aos][data-aos][data-aos-delay="2050"],body[data-aos-delay="2050"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2050"].aos-animate,body[data-aos-delay="2050"] [data-aos].aos-animate{transition-delay:2.05s}[data-aos][data-aos][data-aos-duration="2100"],body[data-aos-duration="2100"] [data-aos]{transition-duration:2.1s}[data-aos][data-aos][data-aos-delay="2100"],body[data-aos-delay="2100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2100"].aos-animate,body[data-aos-delay="2100"] [data-aos].aos-animate{transition-delay:2.1s}[data-aos][data-aos][data-aos-duration="2150"],body[data-aos-duration="2150"] [data-aos]{transition-duration:2.15s}[data-aos][data-aos][data-aos-delay="2150"],body[data-aos-delay="2150"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2150"].aos-animate,body[data-aos-delay="2150"] [data-aos].aos-animate{transition-delay:2.15s}[data-aos][data-aos][data-aos-duration="2200"],body[data-aos-duration="2200"] [data-aos]{transition-duration:2.2s}[data-aos][data-aos][data-aos-delay="2200"],body[data-aos-delay="2200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2200"].aos-animate,body[data-aos-delay="2200"] [data-aos].aos-animate{transition-delay:2.2s}[data-aos][data-aos][data-aos-duration="2250"],body[data-aos-duration="2250"] [data-aos]{transition-duration:2.25s}[data-aos][data-aos][data-aos-delay="2250"],body[data-aos-delay="2250"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2250"].aos-animate,body[data-aos-delay="2250"] [data-aos].aos-animate{transition-delay:2.25s}[data-aos][data-aos][data-aos-duration="2300"],body[data-aos-duration="2300"] [data-aos]{transition-duration:2.3s}[data-aos][data-aos][data-aos-delay="2300"],body[data-aos-delay="2300"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2300"].aos-animate,body[data-aos-delay="2300"] [data-aos].aos-animate{transition-delay:2.3s}[data-aos][data-aos][data-aos-duration="2350"],body[data-aos-duration="2350"] [data-aos]{transition-duration:2.35s}[data-aos][data-aos][data-aos-delay="2350"],body[data-aos-delay="2350"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2350"].aos-animate,body[data-aos-delay="2350"] [data-aos].aos-animate{transition-delay:2.35s}[data-aos][data-aos][data-aos-duration="2400"],body[data-aos-duration="2400"] [data-aos]{transition-duration:2.4s}[data-aos][data-aos][data-aos-delay="2400"],body[data-aos-delay="2400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2400"].aos-animate,body[data-aos-delay="2400"] [data-aos].aos-animate{transition-delay:2.4s}[data-aos][data-aos][data-aos-duration="2450"],body[data-aos-duration="2450"] [data-aos]{transition-duration:2.45s}[data-aos][data-aos][data-aos-delay="2450"],body[data-aos-delay="2450"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2450"].aos-animate,body[data-aos-delay="2450"] [data-aos].aos-animate{transition-delay:2.45s}[data-aos][data-aos][data-aos-duration="2500"],body[data-aos-duration="2500"] [data-aos]{transition-duration:2.5s}[data-aos][data-aos][data-aos-delay="2500"],body[data-aos-delay="2500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2500"].aos-animate,body[data-aos-delay="2500"] [data-aos].aos-animate{transition-delay:2.5s}[data-aos][data-aos][data-aos-duration="2550"],body[data-aos-duration="2550"] [data-aos]{transition-duration:2.55s}[data-aos][data-aos][data-aos-delay="2550"],body[data-aos-delay="2550"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2550"].aos-animate,body[data-aos-delay="2550"] [data-aos].aos-animate{transition-delay:2.55s}[data-aos][data-aos][data-aos-duration="2600"],body[data-aos-duration="2600"] [data-aos]{transition-duration:2.6s}[data-aos][data-aos][data-aos-delay="2600"],body[data-aos-delay="2600"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2600"].aos-animate,body[data-aos-delay="2600"] [data-aos].aos-animate{transition-delay:2.6s}[data-aos][data-aos][data-aos-duration="2650"],body[data-aos-duration="2650"] [data-aos]{transition-duration:2.65s}[data-aos][data-aos][data-aos-delay="2650"],body[data-aos-delay="2650"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2650"].aos-animate,body[data-aos-delay="2650"] [data-aos].aos-animate{transition-delay:2.65s}[data-aos][data-aos][data-aos-duration="2700"],body[data-aos-duration="2700"] [data-aos]{transition-duration:2.7s}[data-aos][data-aos][data-aos-delay="2700"],body[data-aos-delay="2700"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2700"].aos-animate,body[data-aos-delay="2700"] [data-aos].aos-animate{transition-delay:2.7s}[data-aos][data-aos][data-aos-duration="2750"],body[data-aos-duration="2750"] [data-aos]{transition-duration:2.75s}[data-aos][data-aos][data-aos-delay="2750"],body[data-aos-delay="2750"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2750"].aos-animate,body[data-aos-delay="2750"] [data-aos].aos-animate{transition-delay:2.75s}[data-aos][data-aos][data-aos-duration="2800"],body[data-aos-duration="2800"] [data-aos]{transition-duration:2.8s}[data-aos][data-aos][data-aos-delay="2800"],body[data-aos-delay="2800"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2800"].aos-animate,body[data-aos-delay="2800"] [data-aos].aos-animate{transition-delay:2.8s}[data-aos][data-aos][data-aos-duration="2850"],body[data-aos-duration="2850"] [data-aos]{transition-duration:2.85s}[data-aos][data-aos][data-aos-delay="2850"],body[data-aos-delay="2850"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2850"].aos-animate,body[data-aos-delay="2850"] [data-aos].aos-animate{transition-delay:2.85s}[data-aos][data-aos][data-aos-duration="2900"],body[data-aos-duration="2900"] [data-aos]{transition-duration:2.9s}[data-aos][data-aos][data-aos-delay="2900"],body[data-aos-delay="2900"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2900"].aos-animate,body[data-aos-delay="2900"] [data-aos].aos-animate{transition-delay:2.9s}[data-aos][data-aos][data-aos-duration="2950"],body[data-aos-duration="2950"] [data-aos]{transition-duration:2.95s}[data-aos][data-aos][data-aos-delay="2950"],body[data-aos-delay="2950"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2950"].aos-animate,body[data-aos-delay="2950"] [data-aos].aos-animate{transition-delay:2.95s}[data-aos][data-aos][data-aos-duration="3000"],body[data-aos-duration="3000"] [data-aos]{transition-duration:3s}[data-aos][data-aos][data-aos-delay="3000"],body[data-aos-delay="3000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="3000"].aos-animate,body[data-aos-delay="3000"] [data-aos].aos-animate{transition-delay:3s}[data-aos][data-aos][data-aos-easing=linear],body[data-aos-easing=linear] [data-aos]{transition-timing-function:cubic-bezier(.25,.25,.75,.75)}[data-aos][data-aos][data-aos-easing=ease],body[data-aos-easing=ease] [data-aos]{transition-timing-function:ease}[data-aos][data-aos][data-aos-easing=ease-in],body[data-aos-easing=ease-in] [data-aos]{transition-timing-function:ease-in}[data-aos][data-aos][data-aos-easing=ease-out],body[data-aos-easing=ease-out] [data-aos]{transition-timing-function:ease-out}[data-aos][data-aos][data-aos-easing=ease-in-out],body[data-aos-easing=ease-in-out] [data-aos]{transition-timing-function:ease-in-out}[data-aos][data-aos][data-aos-easing=ease-in-back],body[data-aos-easing=ease-in-back] [data-aos]{transition-timing-function:cubic-bezier(.6,-.28,.735,.045)}[data-aos][data-aos][data-aos-easing=ease-out-back],body[data-aos-easing=ease-out-back] [data-aos]{transition-timing-function:cubic-bezier(.175,.885,.32,1.275)}[data-aos][data-aos][data-aos-easing=ease-in-out-back],body[data-aos-easing=ease-in-out-back] [data-aos]{transition-timing-function:cubic-bezier(.68,-.55,.265,1.55)}[data-aos][data-aos][data-aos-easing=ease-in-sine],body[data-aos-easing=ease-in-sine] [data-aos]{transition-timing-function:cubic-bezier(.47,0,.745,.715)}[data-aos][data-aos][data-aos-easing=ease-out-sine],body[data-aos-easing=ease-out-sine] [data-aos]{transition-timing-function:cubic-bezier(.39,.575,.565,1)}[data-aos][data-aos][data-aos-easing=ease-in-out-sine],body[data-aos-easing=ease-in-out-sine] [data-aos]{transition-timing-function:cubic-bezier(.445,.05,.55,.95)}[data-aos][data-aos][data-aos-easing=ease-in-quad],body[data-aos-easing=ease-in-quad] [data-aos]{transition-timing-function:cubic-bezier(.55,.085,.68,.53)}[data-aos][data-aos][data-aos-easing=ease-out-quad],body[data-aos-easing=ease-out-quad] [data-aos]{transition-timing-function:cubic-bezier(.25,.46,.45,.94)}[data-aos][data-aos][data-aos-easing=ease-in-out-quad],body[data-aos-easing=ease-in-out-quad] [data-aos]{transition-timing-function:cubic-bezier(.455,.03,.515,.955)}[data-aos][data-aos][data-aos-easing=ease-in-cubic],body[data-aos-easing=ease-in-cubic] [data-aos]{transition-timing-function:cubic-bezier(.55,.085,.68,.53)}[data-aos][data-aos][data-aos-easing=ease-out-cubic],body[data-aos-easing=ease-out-cubic] [data-aos]{transition-timing-function:cubic-bezier(.25,.46,.45,.94)}[data-aos][data-aos][data-aos-easing=ease-in-out-cubic],body[data-aos-easing=ease-in-out-cubic] [data-aos]{transition-timing-function:cubic-bezier(.455,.03,.515,.955)}[data-aos][data-aos][data-aos-easing=ease-in-quart],body[data-aos-easing=ease-in-quart] [data-aos]{transition-timing-function:cubic-bezier(.55,.085,.68,.53)}[data-aos][data-aos][data-aos-easing=ease-out-quart],body[data-aos-easing=ease-out-quart] [data-aos]{transition-timing-function:cubic-bezier(.25,.46,.45,.94)}[data-aos][data-aos][data-aos-easing=ease-in-out-quart],body[data-aos-easing=ease-in-out-quart] [data-aos]{transition-timing-function:cubic-bezier(.455,.03,.515,.955)}[data-aos^=fade][data-aos^=fade]{opacity:0;transition-property:opacity,transform}[data-aos^=fade][data-aos^=fade].aos-animate{opacity:1;transform:translateZ(0)}[data-aos=fade-up]{transform:translate3d(0,100px,0)}[data-aos=fade-down]{transform:translate3d(0,-100px,0)}[data-aos=fade-right]{transform:translate3d(-100px,0,0)}[data-aos=fade-left]{transform:translate3d(100px,0,0)}[data-aos=fade-up-right]{transform:translate3d(-100px,100px,0)}[data-aos=fade-up-left]{transform:translate3d(100px,100px,0)}[data-aos=fade-down-right]{transform:translate3d(-100px,-100px,0)}[data-aos=fade-down-left]{transform:translate3d(100px,-100px,0)}[data-aos^=zoom][data-aos^=zoom]{opacity:0;transition-property:opacity,transform}[data-aos^=zoom][data-aos^=zoom].aos-animate{opacity:1;transform:translateZ(0) scale(1)}[data-aos=zoom-in]{transform:scale(.6)}[data-aos=zoom-in-up]{transform:translate3d(0,100px,0) scale(.6)}[data-aos=zoom-in-down]{transform:translate3d(0,-100px,0) scale(.6)}[data-aos=zoom-in-right]{transform:translate3d(-100px,0,0) scale(.6)}[data-aos=zoom-in-left]{transform:translate3d(100px,0,0) scale(.6)}[data-aos=zoom-out]{transform:scale(1.2)}[data-aos=zoom-out-up]{transform:translate3d(0,100px,0) scale(1.2)}[data-aos=zoom-out-down]{transform:translate3d(0,-100px,0) scale(1.2)}[data-aos=zoom-out-right]{transform:translate3d(-100px,0,0) scale(1.2)}[data-aos=zoom-out-left]{transform:translate3d(100px,0,0) scale(1.2)}[data-aos^=slide][data-aos^=slide]{transition-property:transform}[data-aos^=slide][data-aos^=slide].aos-animate{transform:translateZ(0)}[data-aos=slide-up]{transform:translate3d(0,100%,0)}[data-aos=slide-down]{transform:translate3d(0,-100%,0)}[data-aos=slide-right]{transform:translate3d(-100%,0,0)}[data-aos=slide-left]{transform:translate3d(100%,0,0)}[data-aos^=flip][data-aos^=flip]{backface-visibility:hidden;transition-property:transform}[data-aos=flip-left]{transform:perspective(2500px) rotateY(-100deg)}[data-aos=flip-left].aos-animate{transform:perspective(2500px) rotateY(0)}[data-aos=flip-right]{transform:perspective(2500px) rotateY(100deg)}[data-aos=flip-right].aos-animate{transform:perspective(2500px) rotateY(0)}[data-aos=flip-up]{transform:perspective(2500px) rotateX(-100deg)}[data-aos=flip-up].aos-animate{transform:perspective(2500px) rotateX(0)}[data-aos=flip-down]{transform:perspective(2500px) rotateX(100deg)}[data-aos=flip-down].aos-animate{transform:perspective(2500px) rotateX(0)}
+
+
+  /* STYLE CSS END https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css */

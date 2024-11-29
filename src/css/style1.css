@@ -1,0 +1,266 @@
+/* Estilos padrão */
+
+body {
+margin-bottom: 0;
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+background-color: #faddbd; /* cor rosa claro */
+overflow-x: hidden; 
+}
+
+/* Adicionando estilos para o topnav */
+.topnav1 {
+background-color: #ffffff; /* cor de fundo do topnav */
+overflow: hidden;
+height: 100px; /* altura desejada para o topnav */
+display: flex; /* Ativar flexbox */
+justify-content: center;
+}
+
+
+
+/* Estilizando o logo no topnav */
+.logo-topnav {
+height: 90px; /* Tornando a imagem do logo ocupando toda a altura do topnav */
+margin-right: 230px;
+}
+
+/* Estilizando os links no topnav */
+.link-sem-decoracao {
+padding: 20px; /* Espaçamento interno */
+}
+
+.link-sem-decoracao a {
+text-decoration: none; /* Removendo decoração de texto */
+color: #333; /* Cor dos links */
+font-size: 14px; /* Tamanho da fonte */
+
+}
+
+
+
+.link-sem-decoracao a:hover {
+color: #000; /* Cor do texto ao passar o mouse */
+}
+
+.opcoes p {
+font-size: 13x; /* Defina o tamanho de fonte desejado */
+font-weight: bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Ajustando os parágrafos */
+.textopage {
+margin: 0 auto; /* Centralizando horizontalmente */
+margin-top: 20px; /* Adicionando margem superior */
+padding: 0 50px; /* Adicionando preenchimento interno */
+text-align: left; /* Alinhando texto justificado */
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 17px;
+}
+
+.titulo-page {
+color: rgb(38, 38, 102);
+font-size: 37px;
+text-align: center;
+font-weight: bold;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+margin-left: 50px;
+margin-right: 50px;
+}
+
+
+
+.sub-tit-pagina1 {
+color: rgb(38, 38, 102);
+font-size: 22px;
+text-align: center;
+font-weight: bold;
+font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+@media screen and (min-width: 769px) {
+
+
+
+.sub-tit-pagina {
+color: rgb(38, 38, 102);
+font-size: 35px;
+text-align: center;
+font-weight: bolder;
+font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.textopage {
+margin: 0 auto; /* Centralizando horizontalmente */
+margin-top: 20px; /* Adicionando margem superior */
+padding: 0 180px; /* Adicionando preenchimento interno */
+text-align: left; /* Alinhando texto justificado */
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 17px;
+}
+
+}
+
+
+
+
+
+
+/* Para telas menores que 600px */
+@media (max-width: 600px) {
+/* Ajuste os estilos conforme necessário para telas menores */
+.logo-topnav {
+margin-left: 10px; /* Reduza a margem esquerda do logo */
+}
+
+.link-sem-decoracao a {
+font-size: 12px; /* Reduza o tamanho da fonte */
+margin-right: 20px; /* Reduza a margem direita dos links */
+margin-bottom: 5px; /* Reduza a margem inferior dos links */
+}
+
+.titulo-page {
+font-size: 28px; /* Reduza o tamanho da fonte para telas menores */
+margin-left: 10px; /* Reduza a margem esquerda */
+margin-right: 10px; /* Reduza a margem direita */
+}
+}
+
+
+@media screen and (min-width: 320px) {
+
+.sub-tit-pagina {
+color: rgb(38, 38, 102);
+font-size: 28px;
+text-align: center;
+font-weight: bolder;
+font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+}
+/* Para telas menores que 320px */
+@media (max-width: 320px) {
+/* Ajuste os estilos conforme necessário para telas menores */
+.topnav1 {
+padding: 0; /* Remover o preenchimento interno */
+}
+
+.link-sem-decoracao {
+padding: 10px; /* Reduzir o espaçamento interno */
+}
+
+.textopage {
+padding: 0 10px; /* Reduza o preenchimento interno do texto */
+}
+}
+
+
+
+
+
+.btn-servicos2 {
+background-color: #ec73b6; /* cor rosa */
+color: #ffffff; /* cor do texto branco */
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 40px;
+transition: background-color 0.3s ease;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */
+}
+
+.center-btn{
+text-align: center;
+}
+
+.btn-sevicos2 :hover {
+background-color: #ec73b6; /* cor rosa mais escura ao passar o mouse */
+}
+
+@media (max-width: 400px) {
+.titulo-page {
+font-size: 24px; /* Reduza ainda mais o tamanho da fonte para telas muito pequenas */
+}
+
+}   
+
+
+@media screen and (max-width: 425px) {
+
+    .topnav1 {
+        background-color: #ffffff; /* cor de fundo do topnav */
+        overflow: hidden;
+        height: 90px; /* altura desejada para o topnav */
+        display: flex; /* Ativar flexbox */
+        justify-content: center;
+        position: fixed; /* Torna o topnav1 fixo */
+        width: 100%; /* Ocupa toda a largura da tela */
+        top: 0; /* Fixa no topo da página */
+        z-index: 1000; /* Garante que o topnav1 esteja acima de outros elementos */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+       
+    }
+
+    .texto1{
+        margin-top: 100px;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+.topnav {
+width: 100%; /* Defina a largura para 100% */
+}
+
+.link-sem-decoracao {
+display: block; /* Tornar os parágrafos visíveis */
+}
+
+
+
+.textopage {
+
+margin-top: 20px; /* Adicionando margem superior */
+text-align: left; /* Alinhando texto justificado */
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 16px;
+}
+
+.titulo-page {
+color: rgb(38, 38, 102);
+font-size: 25px;
+text-align: center;
+font-weight: bold;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+}
+
+/* Para telas de 768px ou mais */
+@media (min-width: 768px) {
+.link-sem-decoracao {
+display: block; /* Tornar os parágrafos visíveis */
+}
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 767px) {
+.link-sem-decoracao {
+display: none; /* Ocultar os parágrafos */
+}
+
+.logo-topnav {
+margin: 0 auto; /* Centralizar a imagem */
+}
+
+.logo-topnav {
+margin: 0 auto; /* Centralizar a imagem */
+}
+}
+
