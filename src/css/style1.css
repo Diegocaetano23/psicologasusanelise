@@ -1,266 +1,1639 @@
-/* Estilos padrão */
-
-body {
-margin-bottom: 0;
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
-background-color: #faddbd; /* cor rosa claro */
-overflow-x: hidden; 
-}
-
-/* Adicionando estilos para o topnav */
-.topnav1 {
-background-color: #ffffff; /* cor de fundo do topnav */
-overflow: hidden;
-height: 100px; /* altura desejada para o topnav */
-display: flex; /* Ativar flexbox */
-justify-content: center;
+body, html {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    width: 100%; /* Garante que o body e html ocupem 100% */
+    box-sizing: border-box; /* Inclui paddings e bordas no cálculo */
+    padding-top: 60px;
 }
 
 
 
-/* Estilizando o logo no topnav */
-.logo-topnav {
-height: 90px; /* Tornando a imagem do logo ocupando toda a altura do topnav */
-margin-right: 230px;
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@ AV - TOPNAV - TOPNAV - TOPNAV - TOPNAV - TOPANV @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+.topnav {
+  position: sticky; /* Mantém o topnav fixo no topo ao rolar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 0; /* Apenas padding vertical */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 0; /* Remove qualquer margem */
+  width: 100%; /* Garante que ocupe toda a largura */
+  position: fixed; /* Fixa no topo da página */
+  top: 0; /* Alinha ao topo */
+  left: 0; /* Inicia da borda esquerda */
+  z-index: 150000; /* Certifique-se de que o topnav está acima do botão */
+  height: auto; /* Ajusta a altura automaticamente, baseado no padding */
 }
 
-/* Estilizando os links no topnav */
-.link-sem-decoracao {
-padding: 20px; /* Espaçamento interno */
-}
+
+/*@@@@@@@ topnav ajuste imagem em telas menore 601px @@@@@@*/
+
 
 .link-sem-decoracao a {
-text-decoration: none; /* Removendo decoração de texto */
-color: #333; /* Cor dos links */
-font-size: 14px; /* Tamanho da fonte */
+  text-decoration: none; /* Remover sublinhado */
+  color: inherit; /* Herdar a cor do texto do elemento pai */
 
+  
+  } 
+
+@media  (min-width: 600px) {
+
+  .logo img {
+    width: 150px;
+    height: auto;
+    margin-left: 200px;
+  }
+}
+
+/*###### topnav ajsut img end - img topnav ajuste end #################*/
+
+.logo img {
+  width: 150px;
+  height: auto;
+  margin-left: 10px;
+ 
+}
+  
+  .links-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .links-top p {
+    margin: 0 20px;
+    cursor: pointer;
+    color: #3d3838;
+    transition: color 0.3s ease;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+  
+  .links-top p:hover {
+    color: #ccc;
+  }
+
+
+  .side-btn {
+    display: none; /* Oculta por padrão */
+}
+
+@media (min-width: 768px) {
+    .side-btn {
+        display: block; /* Exibe em telas maiores ou iguais a 601px */
+    }
+}
+
+
+  .agendar {
+    height: 50px;
+    width: 185px;
+    background-color: #000000;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    display: flex; /* Ativa Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente (ajustável) */
+    gap: 10px; /* Espaçamento entre a imagem e o texto */
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-right: 20px;
+}
+
+.agendar img {
+    height: 25px; /* Ajuste conforme necessário */
+    margin: 0; /* Remove margens extras */
 }
 
 
 
-.link-sem-decoracao a:hover {
-color: #000; /* Cor do texto ao passar o mouse */
+
+  .ahendar:hover{
+    background-color:#000000; /* cor rosa mais escura ao passar o mouse */
+    }
+
+    .agendar{
+      transition: transform 0.3s ease;
+    }
+
+    /* Quando o cursor passa sobre o botão */
+.agendar:hover{
+transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
 }
 
-.opcoes p {
-font-size: 13x; /* Defina o tamanho de fonte desejado */
-font-weight: bold;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-/* Ajustando os parágrafos */
-.textopage {
-margin: 0 auto; /* Centralizando horizontalmente */
-margin-top: 20px; /* Adicionando margem superior */
-padding: 0 50px; /* Adicionando preenchimento interno */
-text-align: left; /* Alinhando texto justificado */
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-font-size: 17px;
-}
-
-.titulo-page {
-color: rgb(38, 38, 102);
-font-size: 37px;
-text-align: center;
-font-weight: bold;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-margin-left: 50px;
-margin-right: 50px;
+/* Quando o botão é clicado */
+.agendar:active{
+transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
 }
 
 
 
-.sub-tit-pagina1 {
-color: rgb(38, 38, 102);
-font-size: 22px;
-text-align: center;
-font-weight: bold;
-font-family:Verdana, Geneva, Tahoma, sans-serif
+/* ############################################################################################
+ TOPNAV END - TOPNAV END - TOPNAV END - TOPNAV END - TOPNAV END #############################*/
+
+
+
+  /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  MENU & DROPDOWN - MENU & DROPDOWN - MENU & DROPDOWN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+  /* Esconder menu padrão em telas maiores */
+.menu {
+    display: none;
 }
 
-@media screen and (min-width: 769px) {
+/* Ajuste do botão do menu */
+
+/*aumentar um pouco o tamanho do botao menu em telas abaixo abaixo de 601px @@@@@@@@@*/
 
 
+/*#### tamanho do botao 600px end ###############################################3*/
 
-.sub-tit-pagina {
-color: rgb(38, 38, 102);
-font-size: 35px;
-text-align: center;
-font-weight: bolder;
-font-family: Verdana, Geneva, Tahoma, sans-serif
+
+.menu img {
+    width: 35px; /* Tamanho reduzido do botão */
+    height: auto;
+    cursor: pointer;
+    margin: 20px;
 }
 
-.textopage {
-margin: 0 auto; /* Centralizando horizontalmente */
-margin-top: 20px; /* Adicionando margem superior */
-padding: 0 180px; /* Adicionando preenchimento interno */
-text-align: left; /* Alinhando texto justificado */
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-font-size: 17px;
+.dropdown-content {
+    display: none; /* Oculta inicialmente */
+    position: fixed; /* Fixa o dropdown em relação à janela */
+    margin-top: 115px;
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o centro visual */
+    background-color: #fafafa; /* Fundo branco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000; /* Certifica-se de que está acima de outros elementos */
+    text-align: center; /* Centraliza os textos */
+    width: 80%; /* Ajustável conforme necessário */
+    max-width: 300px; /* Largura máxima para telas menores */
 }
 
+
+
+
+/* Estilo dos itens do dropdown */
+.dropdown-content p {
+    margin: 10px 0;
+    cursor: pointer;
+    color: #000;
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content p:hover {
+    color: #ccc;
+}
+
+/* Exibir menu dropdown em telas menores */
+@media screen and (max-width: 650px) {
+    .links-top, .btn-top {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        position: relative;
+    }
+    
+}
+
+  /* ##########################################################################################
+  MENU & DROPDOWN END - MENU & DROPDOWN END - MENU & DROPDOWN END ########################## */
+
+
+
+
+
+
+
+
+
+   /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  DIV 1 - DIV 1 - DIV 1 - DIV 1 - DIV 1 - DIV 1 - DIV 1 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+  
+
+/* DIV1 EM TELAS GRANDES APENAS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+  /* Esconde a .div1 por padrão */
+.div1 {
+  display: none;
+
+}
+
+/* Exibe a .div1 apenas em telas acima de 600px */
+@media screen and (min-width: 601px) {
+.div1 {
+    display: block;
+}
+}
+
+/* DIV1 EM TELAS GRANDES APENAS - END #################################################*/
+
+
+  .div1 {
+     position: relative; /* Necessário para usar posicionamento absoluto nos filhos */
+    width: 100%;
+}
+
+.imagem {
+    width: 100%; /* Largura total da viewport */
+    height: auto; /* Mantém proporção */
+}
+
+.textos-horizontais {
+    display: none; /* Esconde por padrão */
+    position: absolute; /* Permite posicionamento sobre a imagem */
+    top: 48%; /* Centraliza verticalmente */
+    left: 5%; /* Posiciona no lado esquerdo */
+    transform: translateY(-50%); /* Ajusta para alinhar ao centro verticalmente */
+    font-family: 'Lucida Sans', sans-serif;
+    text-align: left; /* Texto alinhado à esquerda */
+    background-color: transparent; /* Sem fundo por padrão */
+
+}
+  
+
+
+/* @@@@@@@@@@@@@ TEXTOS HORIZONTAIS EM TELAS ACIMA DE 600PX APENAS @@@@@@@@@@@@@@ */
+
+.textos-horizontais {
+  display: none; /* Esconde o elemento por padrão */
+}
+
+@media screen and (min-width: 601px) {
+  .textos-horizontais {
+      display: block; /* Mostra o elemento em telas acima de 599px */
+  }
 }
 
 
+/* ########## TEXTOS HORIZONTAIS ACIMA DE TELA 600X APENAS - END ################ */
 
-
-
-
-/* Para telas menores que 600px */
-@media (max-width: 600px) {
-/* Ajuste os estilos conforme necessário para telas menores */
-.logo-topnav {
-margin-left: 10px; /* Reduza a margem esquerda do logo */
+.texto-capa1, .texto-capa2, .texto-capa3 {
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: aparecer 1s forwards;
 }
 
-.link-sem-decoracao a {
-font-size: 12px; /* Reduza o tamanho da fonte */
-margin-right: 20px; /* Reduza a margem direita dos links */
-margin-bottom: 5px; /* Reduza a margem inferior dos links */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.titulo-page {
-font-size: 28px; /* Reduza o tamanho da fonte para telas menores */
-margin-left: 10px; /* Reduza a margem esquerda */
-margin-right: 10px; /* Reduza a margem direita */
+.texto-capa3 {
+  transform: translateX(50%);
+  animation: aparecerDireita 1s forwards;
+}
+
+@keyframes aparecerDireita {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} 
+
+
+/* @@@@@@@@@@@@@@@@@ TEXTOS HORIZONTAIS MEDIDAS DIFERENTES EM TELAS ACIMA DE 600PX @@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+@media screen and (min-width: 601px) {
+
+
+  .texto-capa1 {
+
+    color: rgb(41, 41, 104);
+    font-size: 27px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -32px;
+    margin-left: 35px;
+
+    
+    
+    }
+    
+    .texto-capa2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 18px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    }
+    
+    .texto-capa3{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 25px;
+      margin-top: -10px;
+      color: rgb(32, 32, 32);
+      margin-left: 35px;
+      
+    }
+
+
+
+    .agendar-consulta-btn {
+      display: flex;
+      align-items: center; /* Alinha verticalmente o texto e a imagem */
+      justify-content: center; /* Centraliza o conteúdo dentro do botão */
+      background-color: #000000; /* cor do botão */
+      color: #ffffff; /* cor do texto branco */
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+      font-family: Arial, Helvetica, sans-serif;
+      height: 27px;
+      width: 210px;
+      margin-top: -17px;
+      margin-left: 35px;
+    }
+    
+    /* Alinhamento da imagem à esquerda do texto */
+    .agendar-consulta-btn img {
+      width: 23px; /* Define o tamanho da imagem */
+      height: auto; /* Mantém a proporção da imagem */
+      margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+    }
+    
+    /* Efeito hover do botão */
+    .agendar-consulta-btn:hover {
+      background-color: #000000; /* Cor do botão mais escura */
+    }
+    
+  
+}
+
+@media screen and (min-width: 650px) {
+
+
+  .texto-capa1 {
+
+    color: rgb(41, 41, 104);
+    font-size: 27px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    
+    }
+    
+    .texto-capa2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 18px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    }
+    
+    .texto-capa3{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 25px;
+      margin-top: -10px;
+      color: rgb(32, 32, 32);
+      margin-left: 35px;
+    }
+
+
+
+    .agendar-consulta-btn {
+      display: flex;
+      align-items: center; /* Alinha verticalmente o texto e a imagem */
+      justify-content: center; /* Centraliza o conteúdo dentro do botão */
+      background-color: #000000; /* cor do botão */
+      color: #ffffff; /* cor do texto branco */
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+      font-family: Arial, Helvetica, sans-serif;
+      height: 27px;
+      width: 210px;
+      margin-top: -17px;
+      margin-left: 35px;
+    }
+    
+    /* Alinhamento da imagem à esquerda do texto */
+    .agendar-consulta-btn img {
+      width: 23px; /* Define o tamanho da imagem */
+      height: auto; /* Mantém a proporção da imagem */
+      margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+    }
+    
+    /* Efeito hover do botão */
+    .agendar-consulta-btn:hover {
+      background-color: #050505; /* Cor do botão mais escura */
+    }
+    
+  
+}
+
+
+@media screen and (min-width: 768px) {
+
+
+  .texto-capa1 {
+
+    color: rgb(41, 41, 104);
+    font-size: 34px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    
+    }
+    
+    .texto-capa2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 18px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    margin-left: 35px;
+    
+    }
+    
+    .texto-capa3{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 32px;
+      margin-top: -10px;
+      color: rgb(32, 32, 32);
+      margin-left: 35px;
+    }
+
+
+
+    .agendar-consulta-btn {
+      display: flex;
+      align-items: center; /* Alinha verticalmente o texto e a imagem */
+      justify-content: center; /* Centraliza o conteúdo dentro do botão */
+      background-color: #000000; /* cor do botão */
+      color: #ffffff; /* cor do texto branco */
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+      font-family: Arial, Helvetica, sans-serif;
+      height: 27px;
+      width: 210px;
+      margin-top: -17px;
+      margin-left: 35px;
+    }
+    
+    /* Alinhamento da imagem à esquerda do texto */
+    .agendar-consulta-btn img {
+      width: 23px; /* Define o tamanho da imagem */
+      height: auto; /* Mantém a proporção da imagem */
+      margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+    }
+    
+    /* Efeito hover do botão */
+    .agendar-consulta-btn:hover {
+      background-color: #000000; /* Cor do botão mais escura */
+    }
+  }
+
+  @media screen and (min-width: 790px) {
+
+
+    .texto-capa1 {
+  
+      color: rgb(41, 41, 104);
+      font-size: 35px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 35px;
+      
+      
+      }
+      
+      .texto-capa2 {
+      
+      color: rgb(41, 41, 104);
+      font-size: 18px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 35px;
+      
+      }
+      
+      .texto-capa3{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 32px;
+        margin-top: -10px;
+        color: rgb(32, 32, 32);
+        margin-left: 35px;
+      }
+  
+  
+  
+      .agendar-consulta-btn {
+        display: flex;
+        align-items: center; /* Alinha verticalmente o texto e a imagem */
+        justify-content: center; /* Centraliza o conteúdo dentro do botão */
+        background-color: #000000; /* cor do botão */
+        color: #ffffff; /* cor do texto branco */
+        border: none;
+        font-size: 17px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+        font-family: Arial, Helvetica, sans-serif;
+        height: 27px;
+        width: 210px;
+        margin-top: -17px;
+        margin-left: 35px;
+      }
+      
+      /* Alinhamento da imagem à esquerda do texto */
+      .agendar-consulta-btn img {
+        width: 23px; /* Define o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+      }
+      
+      /* Efeito hover do botão */
+      .agendar-consulta-btn:hover {
+        background-color: #000000; /* Cor do botão mais escura */
+      }
+      
+    
+  }
+  
+  @media screen and (min-width: 905px) {
+
+
+    .texto-capa1 {
+  
+      color: rgb(41, 41, 104);
+      font-size: 35px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -20px;
+      margin-left: 65px;
+      
+      
+      }
+      
+      .texto-capa2 {
+      
+      color: rgb(41, 41, 104);
+      font-size: 18px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 65px;
+      
+      }
+      
+      .texto-capa3{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 32px;
+        margin-top: -10px;
+        color: rgb(32, 32, 32);
+        margin-left: 65px;
+      }
+  
+  
+  
+      .agendar-consulta-btn {
+        display: flex;
+        align-items: center; /* Alinha verticalmente o texto e a imagem */
+        justify-content: center; /* Centraliza o conteúdo dentro do botão */
+        background-color: #000000; /* cor do botão */
+        color: #ffffff; /* cor do texto branco */
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+        font-family: Arial, Helvetica, sans-serif;
+        height: 27px;
+        width: 210px;
+        margin-top: -17px;
+         margin-left: 65px;
+      }
+      
+      /* Alinhamento da imagem à esquerda do texto */
+      .agendar-consulta-btn img {
+        width: 23px; /* Define o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+      }
+      
+      /* Efeito hover do botão */
+      .agendar-consulta-btn:hover {
+        background-color: #000000; /* Cor do botão mais escura */
+      }
+      
+      
+    
+  }
+  
+
+  @media screen and (min-width: 1024px) {
+
+
+    .texto-capa1 {
+  
+      color: rgb(41, 41, 104);
+      font-size: 46px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -10px;
+      margin-left: 65px;
+      
+      
+      
+      }
+      
+      .texto-capa2 {
+      
+      color: rgb(41, 41, 104);
+      font-size: 25px;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-top: -30px;
+      margin-left: 65px;
+      
+      }
+      
+      .texto-capa3{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 38px;
+        margin-top: -10px;
+        color: rgb(32, 32, 32);
+        margin-left: 65px;
+      }
+  
+  
+  
+      .agendar-consulta-btn {
+        display: flex;
+        align-items: center; /* Alinha verticalmente o texto e a imagem */
+        justify-content: center; /* Centraliza o conteúdo dentro do botão */
+        background-color: #000000; /* cor do botão */
+        color: #ffffff; /* cor do texto branco */
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+        font-family: Arial, Helvetica, sans-serif;
+        height: 36px;
+        width: 210px;
+        margin-top: -30px;
+        margin-left: 65px;
+    
+      }
+      
+      /* Alinhamento da imagem à esquerda do texto */
+      .agendar-consulta-btn img {
+        width: 23px; /* Define o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+      }
+      
+      /* Efeito hover do botão */
+      .agendar-consulta-btn:hover {
+        background-color: #000000; /* Cor do botão mais escura */
+      }
+    }
+
+
+    @media screen and (min-width: 1070px) {
+
+
+      .texto-capa1 {
+    
+        color: rgb(41, 41, 104);
+        font-size: 50px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin-top: 25px;
+        margin-left: 65px;
+        
+        
+        }
+        
+        .texto-capa2 {
+        
+        color: rgb(41, 41, 104);
+        font-size: 25px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin-top: -40px;
+        margin-left: 65px;
+        
+        }
+        
+        .texto-capa3{
+          font-family:Georgia, 'Times New Roman', Times, serif;
+          font-size: 45px;
+          margin-top: -5px;
+          color: rgb(32, 32, 32);
+          margin-left: 65px;
+        }
+    
+    
+    
+        .agendar-consulta-btn {
+          display: flex;
+          align-items: center; /* Alinha verticalmente o texto e a imagem */
+          justify-content: center; /* Centraliza o conteúdo dentro do botão */
+          background-color: #000000; /* cor do botão */
+          color: #ffffff; /* cor do texto branco */
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+          border-radius: 30px;
+          transition: background-color 0.3s ease;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra suave */
+          font-family: Arial, Helvetica, sans-serif;
+          height: 36px;
+          width: 210px;
+          margin-top: -34px;
+          margin-left: 65px;
+      
+        }
+        
+        /* Alinhamento da imagem à esquerda do texto */
+        .agendar-consulta-btn img {
+          width: 23px; /* Define o tamanho da imagem */
+          height: auto; /* Mantém a proporção da imagem */
+          margin-right: 10px; /* Aumenta o espaçamento à direita da imagem para dar mais espaço ao texto */
+        }
+        
+        /* Efeito hover do botão */
+        .agendar-consulta-btn:hover {
+          background-color: #000000; /* Cor do botão mais escura */
+        }
+      }
+  
+
+
+/* ##################### END TEXTOS HORIZONTAIS MEDIDAS DIFERENTES EM TELAS ACIMDA DE 600PX ################
+############################################################################### END #######################*/
+
+/*
+.texto-capa1 {
+
+  color: rgb(41, 41, 104);
+  font-size: 45px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa2 {
+  
+  color: rgb(41, 41, 104);
+  font-size: 30px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa3{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    margin-top: -10px;
+    color: rgb(32, 32, 32);
+  
+  }
+*/
+
+/* DIV1 BTN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ BTN DIV1 BTN DIV1 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */
+
+
+
+
+
+  .agendar-consulta-btn, .btn-servicos {
+    transition: transform 0.3s ease;
+  }
+
+  /* Quando o cursor passa sobre o botão */
+.agendar-consulta-btn:hover, .btn-servicos:hover {
+transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+}
+
+/* Quando o botão é clicado */
+.agendar-consulta-btn:active, .btn-servicos:active {
+transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
+}
+  
+/*#################################### BTN DIV1 END - BTN END - BTN END DIV 1 ###########################
+###################################################################################################### */
+
+
+
+  /* ############################################################################################
+ DIV 1 END - DIV 1 END - DIV 1 END - DIV 1 END - DIV 1 END - DIV 1 END #############################*/
+
+
+
+
+
+
+ /* @@@@@@@@@@@@ DIV 2 EM TELAS ABAIXO DE 600PX @@@@@@@@@@@@@@@22 */
+
+/* IMAGEM DO QUEM SOU APARECENDO EM TELAS ACIMA DE 599PX APENAS@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@ PARA COLOCAR A OUTRA IMAGEM, AMS IGUAL EM BAIXO @@@@@@@@@@@@@@ */
+
+
+
+  @media (max-width: 599px) {
+    .quemsou-leftside {
+      display: none;
+    }
+
+   .quemsou-content{
+    margin-top: -55px;
+   }
+
+  }
+
+  @media (min-width: 600px) {
+    .quemsou-leftside {
+      display: block;
+    }
+  }
+
+
+/* IMG QUEM SOU EM TELAS ACIMA DE 599 APENAS ##################################
+##### PARA POR ELA NO MEIO DOS TEXTO EM OUTRA DIV ################ */
+
+/* IMAGEM DO LEFSIDE QUEM SOU CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@2
+CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+@media (max-width: 599px) {
+  .quemsou-leftside1 .left-img1 {
+    width: 100%; /* Faz a imagem ocupar no máximo a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+}
+
+@media (min-width: 600px) {
+  .quemsou-leftside1 {
+    display: none; /* Esconde em telas maiores */
+  }
+}
+
+
+/*############### IMG QUEM SOU CONFIG NOM EO DO TEXTO ##################################
+########################################################################*/
+
+
+
+ /* Por padrão, esconde a div2 */
+ .div2 {
+  display: none; /* Esconde por padrão */
+  position: relative; /* Para posicionamento absoluto dos elementos internos */
+  width: 100%; /* Largura total */
+  height: 100%; /* Definindo uma altura fixa para a div2 */
+  z-index: 500;
+  
+ 
+}
+/* Exibe a div2 apenas em telas com largura abaixo de 600px */
+@media screen and (max-width: 600px) {
+.div2 {
+    display: block; /* Torna a div2 visível em telas pequenas */
 }
 }
+
+/*TEXTOS-horizontais2 DA DIV2 - TEXTOS DA DIV2 - TEXTOS DA DIV2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+
+/*TEXTOS HORIZIONTAIS CONTAINER 2 TAMANHS DIFERENTES TELAS MENORES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+/* BTN 2 DA DIV 2 BTN DIV 2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+.agendar-consulta-btn2 {
+  background-color: #000000; /* cor rosa */
+  color: #ffffff; /* cor do texto branco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */ 
+  display: flex; /* Permite alinhar o texto e a imagem */
+  align-items: center;
+  cursor: pointer; /* Mostra o cursor de clique */
+  z-index: 10; /* Garante que o botão fique acima da imagem */
+}
+
+.agendar-consulta-btn2 img {
+  width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+  height: auto;
+}
+
+
+/* #################### END BTN 2 DIV 2 BTN ##########################################################*/
 
 
 @media screen and (min-width: 320px) {
 
-.sub-tit-pagina {
-color: rgb(38, 38, 102);
-font-size: 28px;
-text-align: center;
-font-weight: bolder;
-font-family: Verdana, Geneva, Tahoma, sans-serif
+
+  .textos-horizontais-container2 {
+    display: flex; /* Usando flexbox para centralizar */
+    justify-content: center; /* Alinha os itens no centro horizontal */
+    align-items: center; /* Alinha os itens no centro vertical */
+    height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+    position: absolute;
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .texto-capa1-2 {
+
+    color: rgb(41, 41, 104);
+    font-size: 25px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+  
+    }
+    
+    .texto-capa2-2 {
+    
+    color: rgb(41, 41, 104);
+    font-size: 16px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -30px;
+    
+    
+    }
+    
+    .texto-capa3-2{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 21px;
+      font-weight: bold;
+      color: rgb(32, 32, 32);
+      margin-top: 15px;
+     
+    }
+  
+
+  
+    }
+
+    @media screen and (min-width: 375px) {
+
+
+      .textos-horizontais-container2 {
+        display: flex; /* Usando flexbox para centralizar */
+        justify-content: center; /* Alinha os itens no centro horizontal */
+        align-items: center; /* Alinha os itens no centro vertical */
+        height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+        position: absolute;
+        margin-top: 105px;
+        left: 0;
+        width: 100%;
+      }
+
+
+      .agendar-consulta-btn2 {
+        position: absolute; /* Permite posicionar o botão em relação ao pai */
+        top: 495px;
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+        z-index: 10; /* Garante que o botão fique acima da imagem */
+        background-color: #000000; /* Cor do botão */
+        color: white; /* Cor do texto */
+        padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+        border: none; /* Remove a borda padrão */
+        border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+        cursor: pointer; /* Mostra o cursor de clique */
+        display: flex; /* Permite alinhar o texto e a imagem */
+        align-items: center;
+        gap: 8px; /* Espaço entre o texto e a imagem */
+        font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+        font-family: Arial, Helvetica, sans-serif;
+        white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+      }
+      
+      .agendar-consulta-btn2 img {
+        width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+        height: auto;
+      }
+    
+      .texto-capa1-2 {
+
+        color: rgb(41, 41, 104);
+        font-size: 30px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+        
+        }
+        
+        .texto-capa2-2 {
+        
+        color: rgb(41, 41, 104);
+        font-size: 20px;
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+        
+        }
+        
+        .texto-capa3-2{
+          font-family:Georgia, 'Times New Roman', Times, serif;
+          font-size: 25px;
+          margin-top: -10px;
+          color: rgb(32, 32, 32);
+        
+        }
+      
+      
+        }
+
+        @media screen and (min-width: 425px) {
+
+
+          .textos-horizontais-container2 {
+            display: flex; /* Usando flexbox para centralizar */
+            justify-content: center; /* Alinha os itens no centro horizontal */
+            align-items: center; /* Alinha os itens no centro vertical */
+            height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+            position: absolute;
+            margin-top: 110px;
+            left: 0;
+            width: 100%;
+          }
+        
+          .agendar-consulta-btn2 {
+            position: absolute; /* Permite posicionar o botão em relação ao pai */
+            top: 535px;
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+            z-index: 10; /* Garante que o botão fique acima da imagem */
+            background-color: #000000; /* Cor do botão */
+            color: white; /* Cor do texto */
+            padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+            border: none; /* Remove a borda padrão */
+            border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+            cursor: pointer; /* Mostra o cursor de clique */
+            display: flex; /* Permite alinhar o texto e a imagem */
+            align-items: center;
+            gap: 8px; /* Espaço entre o texto e a imagem */
+            font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+          }
+          
+          .agendar-consulta-btn2 img {
+            width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+            height: auto;
+          }
+
+
+          .texto-capa1-2 {
+
+            color: rgb(41, 41, 104);
+            font-size: 34px;
+            font-weight: bold;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+            
+            }
+            
+            .texto-capa2-2 {
+            
+            color: rgb(41, 41, 104);
+            font-size: 20px;
+            font-weight: bold;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+            
+            }
+            
+            .texto-capa3-2{
+              font-family:Georgia, 'Times New Roman', Times, serif;
+              font-size: 25px;
+              margin-top: -10px;
+              color: rgb(32, 32, 32);
+            
+            }
+          
+          
+            }
+
+            @media screen and (min-width: 475px) {
+
+
+              .textos-horizontais-container2 {
+                display: flex; /* Usando flexbox para centralizar */
+                justify-content: center; /* Alinha os itens no centro horizontal */
+                align-items: center; /* Alinha os itens no centro vertical */
+                height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+                position: absolute;
+                margin-top: 150px;
+                left: 0;
+                width: 100%;
+              }
+
+              .agendar-consulta-btn2 {
+                position: absolute; /* Permite posicionar o botão em relação ao pai */
+                top: 615px;
+                left: 50%; /* Centraliza horizontalmente */
+                transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+                z-index: 10; /* Garante que o botão fique acima da imagem */
+                background-color: #000000; /* Cor do botão */
+                color: white; /* Cor do texto */
+                padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+                border: none; /* Remove a borda padrão */
+                border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+                cursor: pointer; /* Mostra o cursor de clique */
+                display: flex; /* Permite alinhar o texto e a imagem */
+                align-items: center;
+                gap: 8px; /* Espaço entre o texto e a imagem */
+                font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+                font-family: Arial, Helvetica, sans-serif;
+                white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+              }
+              
+              .agendar-consulta-btn2 img {
+                width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+                height: auto;
+              }
+    
+    
+              .texto-capa1-2 {
+    
+                color: rgb(41, 41, 104);
+                font-size: 40px;
+                font-weight: bold;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                
+                
+                }
+                
+                .texto-capa2-2 {
+                
+                color: rgb(41, 41, 104);
+                font-size: 20px;
+                font-weight: bold;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                
+                
+                }
+                
+                .texto-capa3-2{
+                  font-family:Georgia, 'Times New Roman', Times, serif;
+                  font-size: 35px;
+                  margin-top: -10px;
+                  color: rgb(32, 32, 32);
+                
+                }
+
+
+            }
+
+
+              @media screen and (min-width: 525px) {
+
+
+                .textos-horizontais-container2 {
+                  display: flex; /* Usando flexbox para centralizar */
+                  justify-content: center; /* Alinha os itens no centro horizontal */
+                  align-items: center; /* Alinha os itens no centro vertical */
+                  height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+                  position: absolute;
+                  margin-top: 140px;
+                  left: 0;
+                  width: 100%;
+                }
+              
+                .agendar-consulta-btn2 {
+                  position: absolute; /* Permite posicionar o botão em relação ao pai */
+                  top: 670px;
+                  left: 50%; /* Centraliza horizontalmente */
+                  transform: translate(-50%, -50%); /* Ajusta o alinhamento devido ao ponto de origem */
+                  z-index: 10; /* Garante que o botão fique acima da imagem */
+                  background-color: #000000; /* Cor do botão */
+                  color: white; /* Cor do texto */
+                  padding: 5px 30px; /* Reduz a altura (padding vertical menor) e aumenta a largura (padding horizontal maior) */
+                  border: none; /* Remove a borda padrão */
+                  border-radius: 20px; /* Bordas arredondadas, mas menos "gordo" */
+                  cursor: pointer; /* Mostra o cursor de clique */
+                  display: flex; /* Permite alinhar o texto e a imagem */
+                  align-items: center;
+                  gap: 8px; /* Espaço entre o texto e a imagem */
+                  font-size: 14px; /* Ajusta o tamanho do texto para caber melhor */
+                  font-family: Arial, Helvetica, sans-serif;
+                  white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+                }
+                
+                .agendar-consulta-btn2 img {
+                  width: 16px; /* Reduz o tamanho do ícone para combinar com o botão menor */
+                  height: auto;
+                }
+      
+      
+                .texto-capa1-2 {
+      
+                  color: rgb(41, 41, 104);
+                  font-size: 50px;
+                  font-weight: bold;
+                  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  
+                  
+                  }
+                  
+                  .texto-capa2-2 {
+                  
+                  color: rgb(41, 41, 104);
+                  font-size: 20px;
+                  font-weight: bold;
+                  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  
+                  
+                  }
+                  
+                  .texto-capa3-2{
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    font-size: 35px;
+                    margin-top: -10px;
+                    color: rgb(32, 32, 32);
+                  
+                  }
+
+            
+              
+                }
+
+                /* TEXTOS HORIZONTAIS CONTAINER 2 TAMANHOS EM TELAS MENORES END ######################
+                #####################################################################################*/
+        
+    
+
+
+    /* Centraliza o conteúdo dentro de .div2 */
+.textos-horizontais-container2 {
+  display: flex; /* Usando flexbox para centralizar */
+  justify-content: center; /* Alinha os itens no centro horizontal */
+  align-items: center; /* Alinha os itens no centro vertical */
+  height: 100%; /* Garante que o container ocupe toda a altura da .div2 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-}
-/* Para telas menores que 320px */
-@media (max-width: 320px) {
-/* Ajuste os estilos conforme necessário para telas menores */
-.topnav1 {
-padding: 0; /* Remover o preenchimento interno */
-}
-
-.link-sem-decoracao {
-padding: 10px; /* Reduzir o espaçamento interno */
+/* Textos dentro de .textos-horizontais2 */
+.textos-horizontais2 {
+  color: rgb(47, 38, 104);
+  text-align: center; /* Centraliza o texto */
+  max-width: 90%; /* Garante que o texto não ultrapasse a largura da tela */
 }
 
-.textopage {
-padding: 0 10px; /* Reduza o preenchimento interno do texto */
+.texto-capa1-2, .texto-capa2-2, .texto-capa3-2 {
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: aparecer 1s forwards;
 }
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.texto-capa3 {
+  transform: translateX(50%);
+  animation: aparecerDireita 1s forwards;
+}
+
+@keyframes aparecerDireita {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} 
+
+/*
+
+.texto-capa1-2 {
+
+  color: rgb(41, 41, 104);
+  font-size: 20px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa2-2 {
+  
+  color: rgb(41, 41, 104);
+  font-size: 20px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+  }
+  
+  .texto-capa3-2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: -10px;
+    color: rgb(32, 32, 32);
+  
+  }
+
+  */
+
+
+
+/* TEXTOS DA DIV2 END - TEXTOS DA DIV2 END ########################################## */
+
+ /*####### DIV2 ABAIXO DE TELAS 600PX END ################ */
+
+
+ /* @@@@ DIV3PINK BTN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+ 
+ /* Media query para telas menores que 600px */
+/* Media query para telas menores que 600px */
+@media (max-width: 599px) {
+  .div3pink {
+    display: flex; /* Exibe a div em telas menores que 600px */
+  }
+}
+
+/* Media query para telas maiores ou iguais a 600px */
+@media (min-width: 600px) {
+  .div3pink {
+    display: none; /* Esconde a div em telas maiores ou iguais a 600px */
+  }
+}
+
+/* Estilos principais da .div3pink */
+.div3pink {
+  height: 100px;
+  margin-top: -50px;
+  background-color: #ffbac9;
+  justify-content: center; /* Centraliza o botão horizontalmente */
+  align-items: center; /* Centraliza o botão verticalmente */
+  position: relative; /* Faz o z-index funcionar */
+  z-index: 1000; /* Garante que a div ficará acima de outros elementos */
+
+}
+
+.btn-servicos-div3 {
+  background-color: #000000; /* Cor do botão */
+  color: #ffffff; /* Cor do texto */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Sombra do botão */
+  z-index: 20; /* Assegura que o botão esteja acima de qualquer outro elemento */
+}
+
+  .btn-sevicos-div3 :hover {
+    background-color: #000000; /* cor rosa mais escura ao passar o mouse */
+    }
+
+
+
+ /*############## DIV3PINK BTN #######################################################
+ ########################################################################*/
+
+/* DIV  QUEM SOU EU @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+ 
+
+.quemsou{
+  margin-top: -4px;
+
+
 }
 
 
+.quemsou-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Espaço entre os lados */
+  flex-wrap: wrap; /* Para responsividade */
+  padding: 20px;
+}
 
+.quemsou h2{
+color: rgb(41, 41, 104);
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: normal;
+font-size: 29px;
+}
 
+.quemsou p, li{
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #3d3838;
+  
+}
 
-.btn-servicos2 {
-background-color: #ec73b6; /* cor rosa */
-color: #ffffff; /* cor do texto branco */
-border: none;
-padding: 10px 20px;
-font-size: 16px;
-cursor: pointer;
-border-radius: 40px;
-transition: background-color 0.3s ease;
-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */
+.quemsou-leftside img {
+  margin-top: -285px;
+  width: 100%; /* Imagem ajusta ao tamanho disponível */
+  max-width: 500px; /* Limite de largura para a imagem */
+}
+
+.quemsou-rightside {
+  margin-top: 80px;
+  flex: 1;
+}
+
+/* Para telas acima de 600px */
+@media (min-width: 600px) {
+  .quemsou-rightside{
+    margin-right: 30px;
+  }
+
+  .quemsou-content {
+      flex-direction: row; /* Muda para lado a lado */
+      align-items: center; /* Centraliza verticalmente */
+  }
+
+  .quemsou-leftside, .quemsou-rightside {
+      flex: 1; /* Divide igualmente o espaço */
+  }
+
+  .quemsou-leftside img {
+
+      max-width: 100%; /* Imagem ajusta ao lado esquerdo */
+  }
 }
 
 .center-btn{
-text-align: center;
+  text-align: center;
 }
 
-.btn-sevicos2 :hover {
-background-color: #ec73b6; /* cor rosa mais escura ao passar o mouse */
-}
+.btn-servicos {
+  background-color: #000000; /* cor rosa */
+  color: #ffffff; /* cor do texto branco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */
+  }
 
-@media (max-width: 400px) {
-.titulo-page {
-font-size: 24px; /* Reduza ainda mais o tamanho da fonte para telas muito pequenas */
-}
-
-}   
-
-
-@media screen and (max-width: 425px) {
-
-    .topnav1 {
-        background-color: #ffffff; /* cor de fundo do topnav */
-        overflow: hidden;
-        height: 90px; /* altura desejada para o topnav */
-        display: flex; /* Ativar flexbox */
-        justify-content: center;
-        position: fixed; /* Torna o topnav1 fixo */
-        width: 100%; /* Ocupa toda a largura da tela */
-        top: 0; /* Fixa no topo da página */
-        z-index: 1000; /* Garante que o topnav1 esteja acima de outros elementos */
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
-       
+  .btn-sevicos :hover {
+    background-color: #000000; /* cor rosa mais escura ao passar o mouse */
     }
 
-    .texto1{
-        margin-top: 100px;
-    }
+/*########### END DIV QUEM SOU EU ###################/
 
+
+/* @@@@@@@@@@@@@@@ DIV SERVICES BROTHER @@@@@@@@@@@@@@@@@@@@*/
+
+.services {
+  text-align: center;
+  padding: 20px;
+  background-color:  #fcd3e7;
+}
+
+.serv-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.quads-serv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Espaçamento entre os quadrados */
+  justify-content: center;
+}
+
+.quads-serv a {
+  position: relative;
+  width: 235px;
+  height: 235px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Suaviza o efeito de transformação */
+}
+
+.quads-serv a:hover {
+  transform: scale(1.1); /* Aumenta o tamanho em 10% */
 }
 
 
-@media screen and (max-width: 768px) {
-.topnav {
-width: 100%; /* Defina a largura para 100% */
+.quads-serv a span {
+  position: absolute;
+  top: 10px; /* Espaço do topo */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta para centralizar */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  color: white; /* Cor do texto */
+  font-size: 21px; /* Tamanho do texto */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  text-align: center;
+  font-weight: bold; /* Negrito para destacar */
+  white-space: nowrap; /* Impede quebra de linha */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.link-sem-decoracao {
-display: block; /* Tornar os parágrafos visíveis */
+.services h2{
+  color: rgb(41, 41, 104);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 32px;
+  }
+
+/* Layout responsivo para telas abaixo de 601px */
+@media (max-width: 600px) {
+  .quads-serv {
+    flex-direction: column; /* Os quadrados ficam em uma coluna */
+    gap: 10px; /* Ajusta o espaçamento */
+    align-items: center; /* Centraliza os quadrados */
+  }
+
+  .quads-serv a {
+    width: 80%; /* Faz os quadrados ocuparem 80% da largura */
+  }
 }
 
 
-
-.textopage {
-
-margin-top: 20px; /* Adicionando margem superior */
-text-align: left; /* Alinhando texto justificado */
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-font-size: 16px;
-}
-
-.titulo-page {
-color: rgb(38, 38, 102);
-font-size: 25px;
-text-align: center;
-font-weight: bold;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-}
-
-}
-
-/* Para telas de 768px ou mais */
-@media (min-width: 768px) {
-.link-sem-decoracao {
-display: block; /* Tornar os parágrafos visíveis */
-}
-}
-
-/* Para telas menores que 768px */
-@media (max-width: 767px) {
-.link-sem-decoracao {
-display: none; /* Ocultar os parágrafos */
-}
-
-.logo-topnav {
-margin: 0 auto; /* Centralizar a imagem */
-}
-
-.logo-topnav {
-margin: 0 auto; /* Centralizar a imagem */
-}
-}
-
+/* ########## DIV SERVICES END BORHTER ####################################################### SERIVCES QUAD END #
+############## QUAD SERVICES END ############# QUADRADOS END ############################## END ###################*/
