@@ -17,7 +17,7 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #fdfdfd;
   padding: 10px 0; /* Apenas padding vertical */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin: 0; /* Remove qualquer margem */
@@ -1475,6 +1475,7 @@ CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@@@@@@@@@@@@@@@*/
  
 
 .quemsou{
+  background-color: #f9f9f9;
   margin-top: -4px;
 
 
@@ -1641,6 +1642,9 @@ font-size: 29px;
 
 /* @@@@@@@@@@@@@@@@@ div depoimentos @@@@@@ div depoimentos @@@@@@@@@@@ div depoimentos @@@@@@@@@@ div dep */
 
+.depoimentos{
+    background-color: #f9f9f9;
+}
 
 .depoimentos h2{
   color: rgb(41, 41, 104);
@@ -1748,11 +1752,25 @@ font-size: 29px;
     transition: background-color 0.3s ease;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    
   }
   
   .question:hover {
     background-color: #e0e0e0;
   }
+
+  /* Estilo do link */
+.question-item a {
+  text-decoration: underline; /* Sublinha o link */
+  color: black; /* Cor do texto do link */
+  font-style: italic; /* Estilo itálico para o texto */
+}
+
+.question-item a:hover {
+  text-decoration: underline; /* Mantém o sublinhado quando o mouse passa por cima */
+  color: black; /* Mantém a cor preta quando passa o mouse */
+}
+
   
   .answer {
     display: none;
@@ -1763,6 +1781,7 @@ font-size: 29px;
     background-color: #f9f9f9;
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
+    
 
   }
   
@@ -1771,20 +1790,21 @@ font-size: 29px;
 
 /* DIV CONTATOS @@@@@@@@@@@ DIV CONTATOS @@@@@@@@@@@@@@ DIV CONTATOS @@@@@@@@@@@ DIV CONTATOS@@*/
 /* Centralização do conteúdo principal */
+/* Centralização geral */
 .contatos {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #f9f9f9; /* Cor de fundo suave */
+
+  background-color: #f9f9f9;
 }
 
 .contatos-container {
   text-align: center;
-  max-width: 600px; /* Largura máxima */
-  margin: 0 auto; /* Centraliza horizontalmente */
+  max-width: 600px;
+  margin: 0 auto;
   font-family: Arial, sans-serif;
-
 }
 
 h2 {
@@ -1797,20 +1817,82 @@ h2 {
 .contato-item {
   display: flex;
   align-items: center;
-  justify-content: left; /* Centraliza horizontalmente */
+  justify-content: flex-start;
   margin-bottom: 20px;
 }
 
 .contato-item img {
-  width: 27px; /* Tamanho reduzido da imagem */
-  height: 27px;
-  margin-right: 10px; /* Espaço entre a imagem e o texto */
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.contato-item a {
+  text-decoration: none; /* Remove a decoração do link */
+  color: #333; /* Define uma cor para o texto do link */
+  font-size: 18px;
+}
+
+.contato-item a:hover {
+  color: #555; /* Cor ao passar o mouse */
 }
 
 .contato-item p {
   margin: 0;
-  font-size: 18px;
-  color: #333;
 }
 
+
 /* ######### DIV CONTATOS ######### DIV CONTATOS END ##### DIV CONTATOS END ######## END CONTATOS*/
+
+/* @@@@@@@@@@ DIV INFO @@@@@@ DIV INFO @@@@@@@@@@@ DIV INFO @@@@@@@@@@@ DIV INFO @@@@@ DIV INFO @@@@@@2*/
+
+/* Estilo geral para a div info */
+.info {
+  background-color: #f9c9d2; /* Fundo rosa */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  padding: 20px 0; /* Padding para dar espaçamento */
+}
+
+/* Estilo da div info-container */
+.info-container {
+  text-align: center;
+  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+  padding: 20px;
+  border-radius: 8px; /* Bordas arredondadas (caso queira manter) */
+}
+
+/* Estilo da imagem */
+.info-img img {
+  width: 250px; /* Tamanho reduzido da imagem */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+
+/* Estilo do parágrafo no copyright */
+.copyright p {
+  font-style: italic; /* Texto em itálico */
+  text-decoration: none; /* Remover sublinhado do parágrafo */
+  font-size: 13 px;
+  color: #615d5d; /* Cor do texto */
+  margin-bottom: 0;
+  margin-top: 10px;
+  
+}
+
+/* Garantir que o link dentro do parágrafo tenha sublinhado */
+.copyright a {
+  text-decoration: underline; /* Sublinha o link */
+  color: #534e4e; /* Cor do link */
+ 
+}
+
+.copyright a:hover {
+  color: #555; /* Cor do link quando o mouse passa por cima */
+}
+
+
+/*##### DIV INFO END ####### INFO END ######### INFO END ########## DIV INFO END ####### DIV INFO END ##*/
