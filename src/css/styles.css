@@ -1618,7 +1618,7 @@ font-size: 29px;
   color: rgb(41, 41, 104);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: normal;
-  font-size: 32px;
+  font-size: 30px;
   }
 
 /* Layout responsivo para telas abaixo de 601px */
@@ -1637,3 +1637,180 @@ font-size: 29px;
 
 /* ########## DIV SERVICES END BORHTER ####################################################### SERIVCES QUAD END #
 ############## QUAD SERVICES END ############# QUADRADOS END ############################## END ###################*/
+
+
+/* @@@@@@@@@@@@@@@@@ div depoimentos @@@@@@ div depoimentos @@@@@@@@@@@ div depoimentos @@@@@@@@@@ div dep */
+
+
+.depoimentos h2{
+  color: rgb(41, 41, 104);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 29px;
+  text-align: center;
+  }
+
+/* Container do slide */
+.dep-slides {
+  position: relative;
+  width: 320px; /* Tamanho quadrado */
+  height: 320px;
+  margin: 0 auto; /* Centralizado */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Estilo de cada slide */
+.dep-slides .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+}
+
+.dep-slides .slide.active {
+  left: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+.dep-slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o slide */
+}
+
+/* Bolinhas indicadoras */
+.indicators {
+  position: static; /* Remove o posicionamento absoluto */
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+
+.indicators .dot {
+  
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicators .dot.active {
+  background-color: #333;
+}
+
+
+/* ######### DIV DEPOIMENTOS END ############## div depoimentos end ######### div depoimentos end #########*/
+
+/*@@@@@@@@@@@@@@ DIV FAQ @@@@@@@@ DIV FAQ @@@@@@@@@@@ DIV FAQ @@@@@@@@@@@ DIV FAQ @@@*/
+
+.faq{
+  background-color:  #fcd3e7;
+}
+
+.faq h2{
+  color: rgb(41, 41, 104);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 29px;
+  text-align: center;
+  }
+
+
+  .faq-container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .question-item {
+    margin-bottom: 15px;
+  }
+  
+  .question {
+    color: rgb(41, 41, 104);
+    width: 100%;
+    text-align: left;
+    background-color: #fcd3e7;
+    border: 1px solid #ab99ee;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  
+  .question:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .answer {
+    display: none;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+  
+
+/* ####### DIV FAQ END END ########### DIV FAQ END  ########### DIV FAQ END # END FAQ #########*/
+
+/* DIV CONTATOS @@@@@@@@@@@ DIV CONTATOS @@@@@@@@@@@@@@ DIV CONTATOS @@@@@@@@@@@ DIV CONTATOS@@*/
+/* Centralização do conteúdo principal */
+.contatos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f9f9f9; /* Cor de fundo suave */
+}
+
+.contatos-container {
+  text-align: center;
+  max-width: 600px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  font-family: Arial, sans-serif;
+
+}
+
+h2 {
+  font-size: 28px;
+  color: rgb(41, 41, 104);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Estilo dos itens de contato */
+.contato-item {
+  display: flex;
+  align-items: center;
+  justify-content: left; /* Centraliza horizontalmente */
+  margin-bottom: 20px;
+}
+
+.contato-item img {
+  width: 27px; /* Tamanho reduzido da imagem */
+  height: 27px;
+  margin-right: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.contato-item p {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* ######### DIV CONTATOS ######### DIV CONTATOS END ##### DIV CONTATOS END ######## END CONTATOS*/
