@@ -25,12 +25,20 @@ body, html {
   position: fixed; /* Fixa no topo da página */
   top: 0; /* Alinha ao topo */
   left: 0; /* Inicia da borda esquerda */
-  z-index: 20; /* Certifique-se de que o topnav está acima do botão */
+  z-index: 150000; /* Certifique-se de que o topnav está acima do botão */
   height: auto; /* Ajusta a altura automaticamente, baseado no padding */
 }
 
 
 /*@@@@@@@ topnav ajuste imagem em telas menore 601px @@@@@@*/
+
+
+.link-sem-decoracao a {
+  text-decoration: none; /* Remover sublinhado */
+  color: inherit; /* Herdar a cor do texto do elemento pai */
+
+  
+  } 
 
 @media  (min-width: 600px) {
 
@@ -143,8 +151,15 @@ transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
 }
 
 /* Ajuste do botão do menu */
+
+/*aumentar um pouco o tamanho do botao menu em telas abaixo abaixo de 601px @@@@@@@@@*/
+
+
+/*#### tamanho do botao 600px end ###############################################3*/
+
+
 .menu img {
-    width: 30px; /* Tamanho reduzido do botão */
+    width: 35px; /* Tamanho reduzido do botão */
     height: auto;
     cursor: pointer;
     margin: 20px;
@@ -153,7 +168,7 @@ transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
 .dropdown-content {
     display: none; /* Oculta inicialmente */
     position: fixed; /* Fixa o dropdown em relação à janela */
-    margin-top: 100px;
+    margin-top: 115px;
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Ajusta o centro visual */
     background-color: #fafafa; /* Fundo branco */
@@ -165,6 +180,8 @@ transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
     width: 80%; /* Ajustável conforme necessário */
     max-width: 300px; /* Largura máxima para telas menores */
 }
+
+
 
 
 /* Estilo dos itens do dropdown */
@@ -182,7 +199,7 @@ transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
 }
 
 /* Exibir menu dropdown em telas menores */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .links-top, .btn-top {
         display: none;
     }
@@ -878,6 +895,11 @@ transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
     .quemsou-leftside {
       display: none;
     }
+
+   .quemsou-content{
+    margin-top: -55px;
+   }
+
   }
 
   @media (min-width: 600px) {
@@ -918,6 +940,7 @@ CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@@@@@@@@@@@@@@@*/
   position: relative; /* Para posicionamento absoluto dos elementos internos */
   width: 100%; /* Largura total */
   height: 100%; /* Definindo uma altura fixa para a div2 */
+  z-index: 500;
   
  
 }
@@ -1400,29 +1423,48 @@ CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
  
  /* Media query para telas menores que 600px */
+/* Media query para telas menores que 600px */
 @media (max-width: 599px) {
   .div3pink {
-    display: flex; /* Exibe a div como flexbox */
+    display: flex; /* Exibe a div em telas menores que 600px */
   }
 }
 
 /* Media query para telas maiores ou iguais a 600px */
 @media (min-width: 600px) {
   .div3pink {
-    display: none; /* Esconde a div */
+    display: none; /* Esconde a div em telas maiores ou iguais a 600px */
   }
 }
 
 /* Estilos principais da .div3pink */
 .div3pink {
   height: 100px;
-  margin-top: -9px; 
+  margin-top: -50px;
   background-color: #ffbac9;
   justify-content: center; /* Centraliza o botão horizontalmente */
   align-items: center; /* Centraliza o botão verticalmente */
-  z-index: 2;
+  position: relative; /* Faz o z-index funcionar */
+  z-index: 1000; /* Garante que a div ficará acima de outros elementos */
+
 }
 
+.btn-servicos-div3 {
+  background-color: #000000; /* Cor do botão */
+  color: #ffffff; /* Cor do texto */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Sombra do botão */
+  z-index: 20; /* Assegura que o botão esteja acima de qualquer outro elemento */
+}
+
+  .btn-sevicos-div3 :hover {
+    background-color: #000000; /* cor rosa mais escura ao passar o mouse */
+    }
 
 
 
@@ -1452,7 +1494,7 @@ CONFIGURADA NO MEIO DOS TEXTOS QUEM SOU @@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 color: rgb(41, 41, 104);
 font-family: Georgia, 'Times New Roman', Times, serif;
 font-weight: normal;
-font-size: 27px;
+font-size: 29px;
 }
 
 .quemsou p, li{
@@ -1516,534 +1558,82 @@ font-size: 27px;
 
 /*########### END DIV QUEM SOU EU ###################/
 
-/* @@@@@@@@@@@ SERVICOS - QUADRADOS  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@ SERVIÇOS QUADRADOS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
+/* @@@@@@@@@@@@@@@ DIV SERVICES BROTHER @@@@@@@@@@@@@@@@@@@@*/
 
-.servicos{
+.services {
   text-align: center;
+  padding: 20px;
   background-color:  #fcd3e7;
-  padding: 20px; /* Adicionado para espaçamento interno */
-  margin-top: -3px; /* Remover margem superior */
+}
+
+.serv-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.quads-serv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Espaçamento entre os quadrados */
+  justify-content: center;
+}
+
+.quads-serv a {
+  position: relative;
+  width: 235px;
+  height: 235px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Suaviza o efeito de transformação */
+}
+
+.quads-serv a:hover {
+  transform: scale(1.1); /* Aumenta o tamanho em 10% */
 }
 
 
-.texto-servicos1 {
-  max-width: 600px; /* Largura máxima do texto */
-  margin: 0 auto; /* Centralizar o texto */
-  text-align: left;
-}
-
-
-.titulo-servicos1{
-  margin-top:78px !important; 
-  font-size: 30px;
-  color: rgb(47, 38, 104);
+.quads-serv a span {
+  position: absolute;
+  top: 10px; /* Espaço do topo */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta para centralizar */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  color: white; /* Cor do texto */
+  font-size: 21px; /* Tamanho do texto */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
   text-align: center;
+  font-weight: bold; /* Negrito para destacar */
+  white-space: nowrap; /* Impede quebra de linha */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.services h2{
+  color: rgb(41, 41, 104);
   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-
-.quadrado-servico p{
-  font-weight: bolder;
-  font-size: 14px;
-  color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-}  
-
-
-.txt-quad {
-  padding-left: 12px; /* Adiciona padding à esquerda */
-  padding-right: 12px; /* Adiciona padding à direita */
-  }
-  
-  @media screen and (min-width: 320px) {
-
-    .quadrados-servicos a {
-      text-decoration: none; /* Remove a decoração de link */
-    }
-  
-  .quadrado-servico {
-    text-align: center; /* Centralize o texto horizontalmente */
-    background-size: cover; /* Faz com que a imagem cubra todo o espaço do quadrado */
-    background-position: center; /* Centraliza a imagem dentro do quadrado */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-   
-  }
-  
-
-
+  font-weight: normal;
+  font-size: 32px;
   }
 
-
-@media screen and (max-width: 767px) {
-
-  .quadrados-servicos {
-    display: flex;
-    flex-direction: column; /* Dispor os quadrados em coluna */
-    align-items: center; /* Centralizar os quadrados */
-    margin-top: 20px;
+/* Layout responsivo para telas abaixo de 601px */
+@media (max-width: 600px) {
+  .quads-serv {
+    flex-direction: column; /* Os quadrados ficam em uma coluna */
+    gap: 10px; /* Ajusta o espaçamento */
+    align-items: center; /* Centraliza os quadrados */
   }
 
-  .quadrado-servico {
-    width: 80%; /* Largura dos quadrados */
-    height: 200px; /* Altura dos quadrados */
-    background-color: #ffffff; /* cor de fundo dos quadrados */
-    margin-bottom: 20px; /* Espaçamento abaixo dos quadrados */
-      }
-
- 
-
-}
-
-     
-@media screen and (min-width: 768px) {
-
-  .quadrados-servicos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* espaçamento uniforme entre os quadrados */
-    padding: 0 20px; /* Adicionado padding nas laterais */
-    max-width: 1100px; /* Limitar a largura para centralizar os quadrados */
-    margin: 20px auto; /* Centralizar os quadrados */
-    box-sizing: border-box; /* Incluir padding e bordas na largura total */
+  .quads-serv a {
+    width: 80%; /* Faz os quadrados ocuparem 80% da largura */
   }
-
-  .quadrado-servico {
-    width: calc(25% - 20px); /* Largura dos quadrados com margens */
-    height: 250px; /* Altura dos quadrados */
-    background-color: #bbb6e7; /* cor de fundo dos quadrados */
-    margin-bottom: 20px; /* Espaçamento abaixo dos quadrados */
-    text-align: center; /* Centralize o texto horizontalmente */
-    background-size: cover; /* Faz com que a imagem cubra todo o espaço do quadrado */
-    background-position: center; /* Centraliza a imagem dentro do quadrado */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4 ); /* Adiciona uma sombra suave */
-  }
-
-
-  .quadrado-servico:hover{
-    background-color:#c3bfe7; /* cor rosa mais escura ao passar o mouse */
-    }
-
-
-    /* Quando o cursor passa sobre o botão */
-.quadrado-servico:hover{
-transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
 }
 
 
-  .quadrado-servico{
-    transition: transform 0.3s ease;
-  }
-
-
-/* Quando o botão é clicado */
-.quadrado-servico:active{
-transform: scale(0.9); /* Reduz o tamanho do botão em 10% */
-}
-
-
-}
-
-/* ############## END SERVICOS - END SERVICOS QUADRADOS ##########################
-###################################### END SERVICOS QUADRADOS ########################*/  
-
-
-/* @@@@@@@@@@@@@@@@@@@@@@ DEPOIMENTOS - DEPOIMENTS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-
-
-@media (min-width: 600px){
-
-
-
-}
-
-
-.titulo-depoimentos{
-  font-size: 30px;
-  color: rgb(65, 65, 145);
-  text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-top: 100px;
-}
-
-
-
-
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-max-width: 1000px;
-position: relative;
-margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides {
-display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-cursor: pointer;
-position: absolute;
-top: 50%;
-width: auto;
-margin-top: -22px;
-padding: 16px;
-color: white;
-font-weight: bold;
-font-size: 18px;
-transition: 0.6s ease;
-border-radius: 0 3px 3px 0;
-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-right: 0;
-border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-color: #f2f2f2;
-font-size: 15px;
-padding: 8px 12px;
-position: absolute;
-bottom: 8px;
-width: 100%;
-text-align: center;
-}
-
-
-
-/* The dots/bullets/indicators */
-.dot {
-cursor: pointer;
-height: 15px;
-width: 15px;
-margin: 0 2px;
-background-color: #bbb;
-border-radius: 50%;
-display: inline-block;
-transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-animation-name: fade;
-animation-duration: 1.5s;
-}
-
-@keyframes fade {
-from {opacity: .4}
-to {opacity: 1}
-}
-
-.mySlides img {
-max-width: 35%; /* Limita a largura máxima da imagem ao tamanho do contêiner */
-max-height: 300px; /* Define uma altura máxima para a imagem */
-height: auto; /* Mantém a proporção da imagem */
-margin: 0 auto; /* Centraliza horizontalmente */
-display: block; /* Garante que a imagem seja tratada como um bloco */
-} 
-
-@media (max-width: 600px){
-
-  .mySlides img {
-    max-width: 75%; /* Limita a largura máxima da imagem ao tamanho do contêiner */
-    max-height: 300px; /* Define uma altura máxima para a imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    display: block; /* Garante que a imagem seja tratada como um bloco */
-    } 
-    
-}
-
-
-
-
-/* ################################## DEPOIMENT END DEPOIMENTOS END ##############
-####################################################################################### */
-
-  /*@@@@@@@@@@@@@@@@@@22 RESPOSTAS PERGUNTAS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ respostas perguntas faq @@@@@@@@@@@@@ faq @@@@@@@@@@ faq @@ */
-
-  .resposta{
-
-    font-weight: normal;
-    font-size: 15px;  
-    color: rgb(37, 37, 37);
-    }
-    .accordion-button{
-    color: rgb(36, 36, 36);
-    font-size: 18px;
-    }
-    
-    .titulo-faq{
-    margin-top: 99px;
-    }
-    
-    .faq {
-    padding-top: 1px; /* Adiciona espaço extra no topo da div FAQ */
-    padding-bottom: 100px; /* Adiciona espaço extra na parte inferior da div FAQ */
-    }
-    
-    .informacoes {
-    margin-top: 0; /* Remova a margem superior da seção Informações */
-    } 
-    
-    .accordion {
-    max-width: 600px; /* Defina a largura máxima para o acordeão */
-    margin: 0 auto; /* Centralize o acordeão */
-    }
-    
-    .accordion-item {
-    border-bottom: 1px solid #f1c9c9; /* Adicione uma linha divisória entre as perguntas */
-    }
-    
-    .accordion-button {
-    background-color:  #fcd3e7; /* Cor de fundo para as perguntas */
-    width: 100%;
-    text-align: left;
-    padding: 10px 40px 10px 30px; /* Adiciona espaço à esquerda */
-    border: none;
-    outline: none;
-    cursor: pointer;
-    position: relative; /* Adicione posição relativa para que possamos posicionar a seta */
-    }
-    
-    .accordion-content {
-    display: none; /* Oculte o conteúdo das respostas */
-    padding: 10px 20px; /* Adiciona espaço à esquerda */
-    background-color:  #fcd3e7; /* Defina o fundo como branco */
-    }
-    
-    .arrow {
-    position: absolute; /* Posicionamento absoluto em relação ao botão */
-    left: 10px; /* Posicionamento para o lado esquerdo */
-    top: 50%; /* Alinhar verticalmente */
-    transform: translateY(-50%); /* Ajustar verticalmente */
-    transition: transform 0.3s ease; /* Adicionar transição */
-    }
-    
-    .accordion-item.active .arrow {
-    transform: translateY(-50%) rotate(180deg); /* Girar a seta para cima quando a resposta estiver aberta */
-    }
-    
-    
-    
-    
-    .accordion-item.active .accordion-content {
-    display: block; /* Mostrar o conteúdo da resposta quando o item estiver ativo */
-    }
-    
-    
-    
-    .texto-contato {
-    margin-left: 10px; /* Adicione um espaço entre a imagem e o texto */
-    }
-    
-
-  /*######################################## RESPOSTAS PERGUNTAS END ############
-  ############################################## end respostas*/
-
-  /* @@@@@@@@ div contatos - div contatos @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  @@@@@@@@@@@@@@@@@@@ div contatos @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-
-  .titulo-servicos{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-top: 100px;
-    font-size: 30px;
-    color: rgb(47, 38, 104);
-    text-align: center;
-  }
-
-  .container1 {
-    display: flex; /* Use flexbox para organizar os itens */
-    align-items: center; /* Alinhe os itens verticalmente */
-  margin-left: 120px;
-  }
-
-  .textoa {
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: -1px;
-    flex: 1; /* Permita que o texto ocupe o espaço restante */
-  }
-
-
-  .link-sem-decoracao1 a {
-    text-decoration: none; /* Remover sublinhado */
-    color: inherit; /* Herdar a cor do texto do elemento pai */
-    color: #5a5a5a;
-    margin-left: 10px;
-    } 
-
-    
-    
-    .textoa {
-      margin-top: -1px;
-      flex: 1; /* Permita que o texto ocupe o espaço restante */
-    }
-
-
-  @media screen and (min-width :320px){
-
-
-
-
-
-    .textoa{
-    margin-right: 100px;
-    margin-left: -100px;
-    }
-    
-    .textoa1{
-    margin-right: 100px;
-    margin-left: -100px;
-    width: 25px; /* Defina a largura da imagem */
-    height: auto; /* Mantenha a proporção da imagem */  
-    
-    }
-  }    
-
-  @media screen and (min-width: 768px) {
-
-    .container1{
-      margin-left: 300px !important;
-    }
-  }  
-
-  /* ############## div contatos end - contatos end - contatos end #################
-  ####################### contatos end ################################## */
-
-
-  /*@@@@@@@@@@@@@@@@@@@@@@@@ div informacoes @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  @@@@@@@@@@@@@@@ informacoes div @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2*/
-
-
-  .informacoes {
-    background-color:  #fcd3e7;
-    height: 230px; /* altura de até 100px */
-    margin: 0px auto 0; /* remover a margem branca e adicionar margem superior e inferior */
-    display: flex; /* usar flexbox */
-    align-items: center; /* centralizar verticalmente */
-    justify-content: center; /* centralizar horizontalmente */
-    position: relative; /* Adicione posição relativa para que possamos posicionar a div filho absolutamente */
-    margin-top: 0; /* Remova a margem superior da seção Informações */
-    }
-    
-
-    .informacoes img {
-
-      max-width: 250px; /* tamanho de até 80px para a imagem */
-      display: block; /* centralizar a imagem */
-      margin: 0 auto; /* centralizar a imagem */
-      }
-
-     
-
-    .copyright{
-      
-      text-align: center;
-      
-      }
-      
-      .copyright p{
-        font-family: Arial, Helvetica, sans-serif;
-        color:rgb(43, 42, 42);
-        font-size: 13px;
-        position: absolute; /* Posicione absolutamente em relação à div pai */
-        bottom: 0; /* Alinhe a div filho no fundo da div pai */
-        left: 0; /* Alinhe a div filho no canto esquerdo da div pai */
-        width: 100%; /* Defina a largura para ocupar toda a largura da div pai */ 
-    
-      }
-
-
-  /*#################### DIV INFORMACOES END - INFORMACOES END ####################
-  #######################################################################################*/
-
-  /*@@@@@@@ div whaap div whaap @@@ div whaap @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22*/
-
-  .whapp img {
-    width: 80px; /* Definir uma largura fixa para a imagem */
-    height: auto; /* Manter a proporção da imagem */
-    }
-
-    .fixed-image-link {
-      position: fixed; /* Fixar a posição */
-      bottom: 10px; /* Distância do fundo */
-      right: 10px; /* Distância da direita */
-      z-index: 9999; /* Garantir que esteja acima de outros elementos */
-      
-    }
-    
-
-    /*########### div whapp end ###### WHAAP END #############################################
-    ######################################################################################*/
-
-
-    /* @@ EFEITOS DE SURGIR DIREITO E ESQUERDO @@@@@@@@@@@@@@@@@@@@@@2*/
-
-    /* Estilos iniciais para os textos */
-.animate-left {
-  opacity: 0;
-  transform: translateX(-100px); /* Sai da tela pela esquerda */
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.animate-right {
-  opacity: 0;
-  transform: translateX(100px); /* Sai da tela pela direita */
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Estilos quando visíveis */
-.animate-left.visible, .animate-right.visible {
-  opacity: 1;
-  transform: translateX(0); /* Retorna à posição original */
-}
-
-/* Estilos iniciais para os textos */
-.animate-top {
-  opacity: 0;
-  transform: translateY(-50px); /* Posiciona o texto acima */
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Estilos quando visíveis */
-.animate-top.visible {
-  opacity: 1;
-  transform: translateY(0); /* Move para a posição original */
-}
-  
-
-
-
-    /* EFEITOS SURGIR END #######################################################################*/
-
-
-      /* https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css  STYLE CSS */
-
-
-  [data-aos][data-aos][data-aos-duration="50"],body[data-aos-duration="50"] [data-aos]{transition-duration:50ms}[data-aos][data-aos][data-aos-delay="50"],body[data-aos-delay="50"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="50"].aos-animate,body[data-aos-delay="50"] [data-aos].aos-animate{transition-delay:50ms}[data-aos][data-aos][data-aos-duration="100"],body[data-aos-duration="100"] [data-aos]{transition-duration:.1s}[data-aos][data-aos][data-aos-delay="100"],body[data-aos-delay="100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="100"].aos-animate,body[data-aos-delay="100"] [data-aos].aos-animate{transition-delay:.1s}[data-aos][data-aos][data-aos-duration="150"],body[data-aos-duration="150"] [data-aos]{transition-duration:.15s}[data-aos][data-aos][data-aos-delay="150"],body[data-aos-delay="150"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="150"].aos-animate,body[data-aos-delay="150"] [data-aos].aos-animate{transition-delay:.15s}[data-aos][data-aos][data-aos-duration="200"],body[data-aos-duration="200"] [data-aos]{transition-duration:.2s}[data-aos][data-aos][data-aos-delay="200"],body[data-aos-delay="200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="200"].aos-animate,body[data-aos-delay="200"] [data-aos].aos-animate{transition-delay:.2s}[data-aos][data-aos][data-aos-duration="250"],body[data-aos-duration="250"] [data-aos]{transition-duration:.25s}[data-aos][data-aos][data-aos-delay="250"],body[data-aos-delay="250"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="250"].aos-animate,body[data-aos-delay="250"] [data-aos].aos-animate{transition-delay:.25s}[data-aos][data-aos][data-aos-duration="300"],body[data-aos-duration="300"] [data-aos]{transition-duration:.3s}[data-aos][data-aos][data-aos-delay="300"],body[data-aos-delay="300"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="300"].aos-animate,body[data-aos-delay="300"] [data-aos].aos-animate{transition-delay:.3s}[data-aos][data-aos][data-aos-duration="350"],body[data-aos-duration="350"] [data-aos]{transition-duration:.35s}[data-aos][data-aos][data-aos-delay="350"],body[data-aos-delay="350"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="350"].aos-animate,body[data-aos-delay="350"] [data-aos].aos-animate{transition-delay:.35s}[data-aos][data-aos][data-aos-duration="400"],body[data-aos-duration="400"] [data-aos]{transition-duration:.4s}[data-aos][data-aos][data-aos-delay="400"],body[data-aos-delay="400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="400"].aos-animate,body[data-aos-delay="400"] [data-aos].aos-animate{transition-delay:.4s}[data-aos][data-aos][data-aos-duration="450"],body[data-aos-duration="450"] [data-aos]{transition-duration:.45s}[data-aos][data-aos][data-aos-delay="450"],body[data-aos-delay="450"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="450"].aos-animate,body[data-aos-delay="450"] [data-aos].aos-animate{transition-delay:.45s}[data-aos][data-aos][data-aos-duration="500"],body[data-aos-duration="500"] [data-aos]{transition-duration:.5s}[data-aos][data-aos][data-aos-delay="500"],body[data-aos-delay="500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="500"].aos-animate,body[data-aos-delay="500"] [data-aos].aos-animate{transition-delay:.5s}[data-aos][data-aos][data-aos-duration="550"],body[data-aos-duration="550"] [data-aos]{transition-duration:.55s}[data-aos][data-aos][data-aos-delay="550"],body[data-aos-delay="550"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="550"].aos-animate,body[data-aos-delay="550"] [data-aos].aos-animate{transition-delay:.55s}[data-aos][data-aos][data-aos-duration="600"],body[data-aos-duration="600"] [data-aos]{transition-duration:.6s}[data-aos][data-aos][data-aos-delay="600"],body[data-aos-delay="600"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="600"].aos-animate,body[data-aos-delay="600"] [data-aos].aos-animate{transition-delay:.6s}[data-aos][data-aos][data-aos-duration="650"],body[data-aos-duration="650"] [data-aos]{transition-duration:.65s}[data-aos][data-aos][data-aos-delay="650"],body[data-aos-delay="650"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="650"].aos-animate,body[data-aos-delay="650"] [data-aos].aos-animate{transition-delay:.65s}[data-aos][data-aos][data-aos-duration="700"],body[data-aos-duration="700"] [data-aos]{transition-duration:.7s}[data-aos][data-aos][data-aos-delay="700"],body[data-aos-delay="700"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="700"].aos-animate,body[data-aos-delay="700"] [data-aos].aos-animate{transition-delay:.7s}[data-aos][data-aos][data-aos-duration="750"],body[data-aos-duration="750"] [data-aos]{transition-duration:.75s}[data-aos][data-aos][data-aos-delay="750"],body[data-aos-delay="750"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="750"].aos-animate,body[data-aos-delay="750"] [data-aos].aos-animate{transition-delay:.75s}[data-aos][data-aos][data-aos-duration="800"],body[data-aos-duration="800"] [data-aos]{transition-duration:.8s}[data-aos][data-aos][data-aos-delay="800"],body[data-aos-delay="800"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="800"].aos-animate,body[data-aos-delay="800"] [data-aos].aos-animate{transition-delay:.8s}[data-aos][data-aos][data-aos-duration="850"],body[data-aos-duration="850"] [data-aos]{transition-duration:.85s}[data-aos][data-aos][data-aos-delay="850"],body[data-aos-delay="850"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="850"].aos-animate,body[data-aos-delay="850"] [data-aos].aos-animate{transition-delay:.85s}[data-aos][data-aos][data-aos-duration="900"],body[data-aos-duration="900"] [data-aos]{transition-duration:.9s}[data-aos][data-aos][data-aos-delay="900"],body[data-aos-delay="900"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="900"].aos-animate,body[data-aos-delay="900"] [data-aos].aos-animate{transition-delay:.9s}[data-aos][data-aos][data-aos-duration="950"],body[data-aos-duration="950"] [data-aos]{transition-duration:.95s}[data-aos][data-aos][data-aos-delay="950"],body[data-aos-delay="950"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="950"].aos-animate,body[data-aos-delay="950"] [data-aos].aos-animate{transition-delay:.95s}[data-aos][data-aos][data-aos-duration="1000"],body[data-aos-duration="1000"] [data-aos]{transition-duration:1s}[data-aos][data-aos][data-aos-delay="1000"],body[data-aos-delay="1000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1000"].aos-animate,body[data-aos-delay="1000"] [data-aos].aos-animate{transition-delay:1s}[data-aos][data-aos][data-aos-duration="1050"],body[data-aos-duration="1050"] [data-aos]{transition-duration:1.05s}[data-aos][data-aos][data-aos-delay="1050"],body[data-aos-delay="1050"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1050"].aos-animate,body[data-aos-delay="1050"] [data-aos].aos-animate{transition-delay:1.05s}[data-aos][data-aos][data-aos-duration="1100"],body[data-aos-duration="1100"] [data-aos]{transition-duration:1.1s}[data-aos][data-aos][data-aos-delay="1100"],body[data-aos-delay="1100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1100"].aos-animate,body[data-aos-delay="1100"] [data-aos].aos-animate{transition-delay:1.1s}[data-aos][data-aos][data-aos-duration="1150"],body[data-aos-duration="1150"] [data-aos]{transition-duration:1.15s}[data-aos][data-aos][data-aos-delay="1150"],body[data-aos-delay="1150"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1150"].aos-animate,body[data-aos-delay="1150"] [data-aos].aos-animate{transition-delay:1.15s}[data-aos][data-aos][data-aos-duration="1200"],body[data-aos-duration="1200"] [data-aos]{transition-duration:1.2s}[data-aos][data-aos][data-aos-delay="1200"],body[data-aos-delay="1200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1200"].aos-animate,body[data-aos-delay="1200"] [data-aos].aos-animate{transition-delay:1.2s}[data-aos][data-aos][data-aos-duration="1250"],body[data-aos-duration="1250"] [data-aos]{transition-duration:1.25s}[data-aos][data-aos][data-aos-delay="1250"],body[data-aos-delay="1250"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1250"].aos-animate,body[data-aos-delay="1250"] [data-aos].aos-animate{transition-delay:1.25s}[data-aos][data-aos][data-aos-duration="1300"],body[data-aos-duration="1300"] [data-aos]{transition-duration:1.3s}[data-aos][data-aos][data-aos-delay="1300"],body[data-aos-delay="1300"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1300"].aos-animate,body[data-aos-delay="1300"] [data-aos].aos-animate{transition-delay:1.3s}[data-aos][data-aos][data-aos-duration="1350"],body[data-aos-duration="1350"] [data-aos]{transition-duration:1.35s}[data-aos][data-aos][data-aos-delay="1350"],body[data-aos-delay="1350"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1350"].aos-animate,body[data-aos-delay="1350"] [data-aos].aos-animate{transition-delay:1.35s}[data-aos][data-aos][data-aos-duration="1400"],body[data-aos-duration="1400"] [data-aos]{transition-duration:1.4s}[data-aos][data-aos][data-aos-delay="1400"],body[data-aos-delay="1400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1400"].aos-animate,body[data-aos-delay="1400"] [data-aos].aos-animate{transition-delay:1.4s}[data-aos][data-aos][data-aos-duration="1450"],body[data-aos-duration="1450"] [data-aos]{transition-duration:1.45s}[data-aos][data-aos][data-aos-delay="1450"],body[data-aos-delay="1450"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1450"].aos-animate,body[data-aos-delay="1450"] [data-aos].aos-animate{transition-delay:1.45s}[data-aos][data-aos][data-aos-duration="1500"],body[data-aos-duration="1500"] [data-aos]{transition-duration:1.5s}[data-aos][data-aos][data-aos-delay="1500"],body[data-aos-delay="1500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1500"].aos-animate,body[data-aos-delay="1500"] [data-aos].aos-animate{transition-delay:1.5s}[data-aos][data-aos][data-aos-duration="1550"],body[data-aos-duration="1550"] [data-aos]{transition-duration:1.55s}[data-aos][data-aos][data-aos-delay="1550"],body[data-aos-delay="1550"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1550"].aos-animate,body[data-aos-delay="1550"] [data-aos].aos-animate{transition-delay:1.55s}[data-aos][data-aos][data-aos-duration="1600"],body[data-aos-duration="1600"] [data-aos]{transition-duration:1.6s}[data-aos][data-aos][data-aos-delay="1600"],body[data-aos-delay="1600"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1600"].aos-animate,body[data-aos-delay="1600"] [data-aos].aos-animate{transition-delay:1.6s}[data-aos][data-aos][data-aos-duration="1650"],body[data-aos-duration="1650"] [data-aos]{transition-duration:1.65s}[data-aos][data-aos][data-aos-delay="1650"],body[data-aos-delay="1650"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1650"].aos-animate,body[data-aos-delay="1650"] [data-aos].aos-animate{transition-delay:1.65s}[data-aos][data-aos][data-aos-duration="1700"],body[data-aos-duration="1700"] [data-aos]{transition-duration:1.7s}[data-aos][data-aos][data-aos-delay="1700"],body[data-aos-delay="1700"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1700"].aos-animate,body[data-aos-delay="1700"] [data-aos].aos-animate{transition-delay:1.7s}[data-aos][data-aos][data-aos-duration="1750"],body[data-aos-duration="1750"] [data-aos]{transition-duration:1.75s}[data-aos][data-aos][data-aos-delay="1750"],body[data-aos-delay="1750"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1750"].aos-animate,body[data-aos-delay="1750"] [data-aos].aos-animate{transition-delay:1.75s}[data-aos][data-aos][data-aos-duration="1800"],body[data-aos-duration="1800"] [data-aos]{transition-duration:1.8s}[data-aos][data-aos][data-aos-delay="1800"],body[data-aos-delay="1800"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1800"].aos-animate,body[data-aos-delay="1800"] [data-aos].aos-animate{transition-delay:1.8s}[data-aos][data-aos][data-aos-duration="1850"],body[data-aos-duration="1850"] [data-aos]{transition-duration:1.85s}[data-aos][data-aos][data-aos-delay="1850"],body[data-aos-delay="1850"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1850"].aos-animate,body[data-aos-delay="1850"] [data-aos].aos-animate{transition-delay:1.85s}[data-aos][data-aos][data-aos-duration="1900"],body[data-aos-duration="1900"] [data-aos]{transition-duration:1.9s}[data-aos][data-aos][data-aos-delay="1900"],body[data-aos-delay="1900"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1900"].aos-animate,body[data-aos-delay="1900"] [data-aos].aos-animate{transition-delay:1.9s}[data-aos][data-aos][data-aos-duration="1950"],body[data-aos-duration="1950"] [data-aos]{transition-duration:1.95s}[data-aos][data-aos][data-aos-delay="1950"],body[data-aos-delay="1950"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1950"].aos-animate,body[data-aos-delay="1950"] [data-aos].aos-animate{transition-delay:1.95s}[data-aos][data-aos][data-aos-duration="2000"],body[data-aos-duration="2000"] [data-aos]{transition-duration:2s}[data-aos][data-aos][data-aos-delay="2000"],body[data-aos-delay="2000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2000"].aos-animate,body[data-aos-delay="2000"] [data-aos].aos-animate{transition-delay:2s}[data-aos][data-aos][data-aos-duration="2050"],body[data-aos-duration="2050"] [data-aos]{transition-duration:2.05s}[data-aos][data-aos][data-aos-delay="2050"],body[data-aos-delay="2050"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2050"].aos-animate,body[data-aos-delay="2050"] [data-aos].aos-animate{transition-delay:2.05s}[data-aos][data-aos][data-aos-duration="2100"],body[data-aos-duration="2100"] [data-aos]{transition-duration:2.1s}[data-aos][data-aos][data-aos-delay="2100"],body[data-aos-delay="2100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2100"].aos-animate,body[data-aos-delay="2100"] [data-aos].aos-animate{transition-delay:2.1s}[data-aos][data-aos][data-aos-duration="2150"],body[data-aos-duration="2150"] [data-aos]{transition-duration:2.15s}[data-aos][data-aos][data-aos-delay="2150"],body[data-aos-delay="2150"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2150"].aos-animate,body[data-aos-delay="2150"] [data-aos].aos-animate{transition-delay:2.15s}[data-aos][data-aos][data-aos-duration="2200"],body[data-aos-duration="2200"] [data-aos]{transition-duration:2.2s}[data-aos][data-aos][data-aos-delay="2200"],body[data-aos-delay="2200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2200"].aos-animate,body[data-aos-delay="2200"] [data-aos].aos-animate{transition-delay:2.2s}[data-aos][data-aos][data-aos-duration="2250"],body[data-aos-duration="2250"] [data-aos]{transition-duration:2.25s}[data-aos][data-aos][data-aos-delay="2250"],body[data-aos-delay="2250"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2250"].aos-animate,body[data-aos-delay="2250"] [data-aos].aos-animate{transition-delay:2.25s}[data-aos][data-aos][data-aos-duration="2300"],body[data-aos-duration="2300"] [data-aos]{transition-duration:2.3s}[data-aos][data-aos][data-aos-delay="2300"],body[data-aos-delay="2300"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2300"].aos-animate,body[data-aos-delay="2300"] [data-aos].aos-animate{transition-delay:2.3s}[data-aos][data-aos][data-aos-duration="2350"],body[data-aos-duration="2350"] [data-aos]{transition-duration:2.35s}[data-aos][data-aos][data-aos-delay="2350"],body[data-aos-delay="2350"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2350"].aos-animate,body[data-aos-delay="2350"] [data-aos].aos-animate{transition-delay:2.35s}[data-aos][data-aos][data-aos-duration="2400"],body[data-aos-duration="2400"] [data-aos]{transition-duration:2.4s}[data-aos][data-aos][data-aos-delay="2400"],body[data-aos-delay="2400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2400"].aos-animate,body[data-aos-delay="2400"] [data-aos].aos-animate{transition-delay:2.4s}[data-aos][data-aos][data-aos-duration="2450"],body[data-aos-duration="2450"] [data-aos]{transition-duration:2.45s}[data-aos][data-aos][data-aos-delay="2450"],body[data-aos-delay="2450"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2450"].aos-animate,body[data-aos-delay="2450"] [data-aos].aos-animate{transition-delay:2.45s}[data-aos][data-aos][data-aos-duration="2500"],body[data-aos-duration="2500"] [data-aos]{transition-duration:2.5s}[data-aos][data-aos][data-aos-delay="2500"],body[data-aos-delay="2500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2500"].aos-animate,body[data-aos-delay="2500"] [data-aos].aos-animate{transition-delay:2.5s}[data-aos][data-aos][data-aos-duration="2550"],body[data-aos-duration="2550"] [data-aos]{transition-duration:2.55s}[data-aos][data-aos][data-aos-delay="2550"],body[data-aos-delay="2550"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2550"].aos-animate,body[data-aos-delay="2550"] [data-aos].aos-animate{transition-delay:2.55s}[data-aos][data-aos][data-aos-duration="2600"],body[data-aos-duration="2600"] [data-aos]{transition-duration:2.6s}[data-aos][data-aos][data-aos-delay="2600"],body[data-aos-delay="2600"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2600"].aos-animate,body[data-aos-delay="2600"] [data-aos].aos-animate{transition-delay:2.6s}[data-aos][data-aos][data-aos-duration="2650"],body[data-aos-duration="2650"] [data-aos]{transition-duration:2.65s}[data-aos][data-aos][data-aos-delay="2650"],body[data-aos-delay="2650"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2650"].aos-animate,body[data-aos-delay="2650"] [data-aos].aos-animate{transition-delay:2.65s}[data-aos][data-aos][data-aos-duration="2700"],body[data-aos-duration="2700"] [data-aos]{transition-duration:2.7s}[data-aos][data-aos][data-aos-delay="2700"],body[data-aos-delay="2700"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2700"].aos-animate,body[data-aos-delay="2700"] [data-aos].aos-animate{transition-delay:2.7s}[data-aos][data-aos][data-aos-duration="2750"],body[data-aos-duration="2750"] [data-aos]{transition-duration:2.75s}[data-aos][data-aos][data-aos-delay="2750"],body[data-aos-delay="2750"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2750"].aos-animate,body[data-aos-delay="2750"] [data-aos].aos-animate{transition-delay:2.75s}[data-aos][data-aos][data-aos-duration="2800"],body[data-aos-duration="2800"] [data-aos]{transition-duration:2.8s}[data-aos][data-aos][data-aos-delay="2800"],body[data-aos-delay="2800"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2800"].aos-animate,body[data-aos-delay="2800"] [data-aos].aos-animate{transition-delay:2.8s}[data-aos][data-aos][data-aos-duration="2850"],body[data-aos-duration="2850"] [data-aos]{transition-duration:2.85s}[data-aos][data-aos][data-aos-delay="2850"],body[data-aos-delay="2850"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2850"].aos-animate,body[data-aos-delay="2850"] [data-aos].aos-animate{transition-delay:2.85s}[data-aos][data-aos][data-aos-duration="2900"],body[data-aos-duration="2900"] [data-aos]{transition-duration:2.9s}[data-aos][data-aos][data-aos-delay="2900"],body[data-aos-delay="2900"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2900"].aos-animate,body[data-aos-delay="2900"] [data-aos].aos-animate{transition-delay:2.9s}[data-aos][data-aos][data-aos-duration="2950"],body[data-aos-duration="2950"] [data-aos]{transition-duration:2.95s}[data-aos][data-aos][data-aos-delay="2950"],body[data-aos-delay="2950"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2950"].aos-animate,body[data-aos-delay="2950"] [data-aos].aos-animate{transition-delay:2.95s}[data-aos][data-aos][data-aos-duration="3000"],body[data-aos-duration="3000"] [data-aos]{transition-duration:3s}[data-aos][data-aos][data-aos-delay="3000"],body[data-aos-delay="3000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="3000"].aos-animate,body[data-aos-delay="3000"] [data-aos].aos-animate{transition-delay:3s}[data-aos][data-aos][data-aos-easing=linear],body[data-aos-easing=linear] [data-aos]{transition-timing-function:cubic-bezier(.25,.25,.75,.75)}[data-aos][data-aos][data-aos-easing=ease],body[data-aos-easing=ease] [data-aos]{transition-timing-function:ease}[data-aos][data-aos][data-aos-easing=ease-in],body[data-aos-easing=ease-in] [data-aos]{transition-timing-function:ease-in}[data-aos][data-aos][data-aos-easing=ease-out],body[data-aos-easing=ease-out] [data-aos]{transition-timing-function:ease-out}[data-aos][data-aos][data-aos-easing=ease-in-out],body[data-aos-easing=ease-in-out] [data-aos]{transition-timing-function:ease-in-out}[data-aos][data-aos][data-aos-easing=ease-in-back],body[data-aos-easing=ease-in-back] [data-aos]{transition-timing-function:cubic-bezier(.6,-.28,.735,.045)}[data-aos][data-aos][data-aos-easing=ease-out-back],body[data-aos-easing=ease-out-back] [data-aos]{transition-timing-function:cubic-bezier(.175,.885,.32,1.275)}[data-aos][data-aos][data-aos-easing=ease-in-out-back],body[data-aos-easing=ease-in-out-back] [data-aos]{transition-timing-function:cubic-bezier(.68,-.55,.265,1.55)}[data-aos][data-aos][data-aos-easing=ease-in-sine],body[data-aos-easing=ease-in-sine] [data-aos]{transition-timing-function:cubic-bezier(.47,0,.745,.715)}[data-aos][data-aos][data-aos-easing=ease-out-sine],body[data-aos-easing=ease-out-sine] [data-aos]{transition-timing-function:cubic-bezier(.39,.575,.565,1)}[data-aos][data-aos][data-aos-easing=ease-in-out-sine],body[data-aos-easing=ease-in-out-sine] [data-aos]{transition-timing-function:cubic-bezier(.445,.05,.55,.95)}[data-aos][data-aos][data-aos-easing=ease-in-quad],body[data-aos-easing=ease-in-quad] [data-aos]{transition-timing-function:cubic-bezier(.55,.085,.68,.53)}[data-aos][data-aos][data-aos-easing=ease-out-quad],body[data-aos-easing=ease-out-quad] [data-aos]{transition-timing-function:cubic-bezier(.25,.46,.45,.94)}[data-aos][data-aos][data-aos-easing=ease-in-out-quad],body[data-aos-easing=ease-in-out-quad] [data-aos]{transition-timing-function:cubic-bezier(.455,.03,.515,.955)}[data-aos][data-aos][data-aos-easing=ease-in-cubic],body[data-aos-easing=ease-in-cubic] [data-aos]{transition-timing-function:cubic-bezier(.55,.085,.68,.53)}[data-aos][data-aos][data-aos-easing=ease-out-cubic],body[data-aos-easing=ease-out-cubic] [data-aos]{transition-timing-function:cubic-bezier(.25,.46,.45,.94)}[data-aos][data-aos][data-aos-easing=ease-in-out-cubic],body[data-aos-easing=ease-in-out-cubic] [data-aos]{transition-timing-function:cubic-bezier(.455,.03,.515,.955)}[data-aos][data-aos][data-aos-easing=ease-in-quart],body[data-aos-easing=ease-in-quart] [data-aos]{transition-timing-function:cubic-bezier(.55,.085,.68,.53)}[data-aos][data-aos][data-aos-easing=ease-out-quart],body[data-aos-easing=ease-out-quart] [data-aos]{transition-timing-function:cubic-bezier(.25,.46,.45,.94)}[data-aos][data-aos][data-aos-easing=ease-in-out-quart],body[data-aos-easing=ease-in-out-quart] [data-aos]{transition-timing-function:cubic-bezier(.455,.03,.515,.955)}[data-aos^=fade][data-aos^=fade]{opacity:0;transition-property:opacity,transform}[data-aos^=fade][data-aos^=fade].aos-animate{opacity:1;transform:translateZ(0)}[data-aos=fade-up]{transform:translate3d(0,100px,0)}[data-aos=fade-down]{transform:translate3d(0,-100px,0)}[data-aos=fade-right]{transform:translate3d(-100px,0,0)}[data-aos=fade-left]{transform:translate3d(100px,0,0)}[data-aos=fade-up-right]{transform:translate3d(-100px,100px,0)}[data-aos=fade-up-left]{transform:translate3d(100px,100px,0)}[data-aos=fade-down-right]{transform:translate3d(-100px,-100px,0)}[data-aos=fade-down-left]{transform:translate3d(100px,-100px,0)}[data-aos^=zoom][data-aos^=zoom]{opacity:0;transition-property:opacity,transform}[data-aos^=zoom][data-aos^=zoom].aos-animate{opacity:1;transform:translateZ(0) scale(1)}[data-aos=zoom-in]{transform:scale(.6)}[data-aos=zoom-in-up]{transform:translate3d(0,100px,0) scale(.6)}[data-aos=zoom-in-down]{transform:translate3d(0,-100px,0) scale(.6)}[data-aos=zoom-in-right]{transform:translate3d(-100px,0,0) scale(.6)}[data-aos=zoom-in-left]{transform:translate3d(100px,0,0) scale(.6)}[data-aos=zoom-out]{transform:scale(1.2)}[data-aos=zoom-out-up]{transform:translate3d(0,100px,0) scale(1.2)}[data-aos=zoom-out-down]{transform:translate3d(0,-100px,0) scale(1.2)}[data-aos=zoom-out-right]{transform:translate3d(-100px,0,0) scale(1.2)}[data-aos=zoom-out-left]{transform:translate3d(100px,0,0) scale(1.2)}[data-aos^=slide][data-aos^=slide]{transition-property:transform}[data-aos^=slide][data-aos^=slide].aos-animate{transform:translateZ(0)}[data-aos=slide-up]{transform:translate3d(0,100%,0)}[data-aos=slide-down]{transform:translate3d(0,-100%,0)}[data-aos=slide-right]{transform:translate3d(-100%,0,0)}[data-aos=slide-left]{transform:translate3d(100%,0,0)}[data-aos^=flip][data-aos^=flip]{backface-visibility:hidden;transition-property:transform}[data-aos=flip-left]{transform:perspective(2500px) rotateY(-100deg)}[data-aos=flip-left].aos-animate{transform:perspective(2500px) rotateY(0)}[data-aos=flip-right]{transform:perspective(2500px) rotateY(100deg)}[data-aos=flip-right].aos-animate{transform:perspective(2500px) rotateY(0)}[data-aos=flip-up]{transform:perspective(2500px) rotateX(-100deg)}[data-aos=flip-up].aos-animate{transform:perspective(2500px) rotateX(0)}[data-aos=flip-down]{transform:perspective(2500px) rotateX(100deg)}[data-aos=flip-down].aos-animate{transform:perspective(2500px) rotateX(0)}
-
-
-  /* STYLE CSS END https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css */
+/* ########## DIV SERVICES END BORHTER ####################################################### SERIVCES QUAD END #
+############## QUAD SERVICES END ############# QUADRADOS END ############################## END ###################*/
